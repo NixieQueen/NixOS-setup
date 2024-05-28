@@ -19,19 +19,6 @@ in
     config.allowUnfree = true;
     overlays = [
       (self: super:
-        { awesome = super.awesome.overrideAttrs (old: rec
-          {
-            src = super.fetchFromGitHub {
-              owner = "awesomeWM";
-              repo = "awesome";
-              rev = "a1f58ab97c90c85759a3b33a96af2bfd0b6fe78b";
-              sha256 = "sha256-58gWCZcDumyN+bSZ4Jh6mfGtmBCFWDE7aqCpyWEK9x8=";
-            };
-            patches = [];
-          });
-        }
-      )
-      (self: super:
         { picom = super.picom.overrideAttrs (old: rec
           {
             src = super.fetchFromGitHub {
@@ -132,9 +119,9 @@ in
     windowManager = {
       awesome = {
         enable = true;
-        luaModules = with pkgs.luaPackages; [
-          luarocks
-        ];
+        #luaModules = with pkgs.luaPackages; [
+        #  luarocks
+        #];
       };
     };
   };  

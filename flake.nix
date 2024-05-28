@@ -2,6 +2,7 @@
   description = "nixie's first flake";
 
   inputs = {
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
         url = github:nix-community/home-manager;
@@ -9,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k }:
     let
         user = "nixie";
         system = "x86_64-linux";
@@ -38,15 +39,22 @@
          awesomeNixie = lib.nixosSystem {
             inherit system;
             modules = [
-                ./awesome-configuration.nix
-                home-manager.nixosModules.home-manager {
-                    home-manager.useGlobalPkgs = true;
-                    home-manager.backupFileExtension = "backup";
-                    home-manager.useUserPackages = true;
-                    home-manager.users.${user} = {
-                        imports = [ ./awesome-home.nix ];
-                    };
-                }
+
+              {
+                nixpkgs.overlays = [
+                  nixpkgs-f2k.overlays.window-managers
+                ];
+              }
+
+              ./awesome-configuration.nix
+              home-manager.nixosModules.home-manager {
+                home-manager.useGlobalPkgs = true;
+                home-manager.backupFileExtension = "backup";
+                home-manager.useUserPackages = true;
+                home-manager.users.${user} = {
+                  imports = [ ./awesome-home.nix ];
+                };
+              }
             ];
          };
 
