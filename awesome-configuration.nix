@@ -101,7 +101,7 @@ in
       gnome.enable = false;
     };
     windowManager = {
-      awesome = {
+      nixpkgs-f2k.awesome-git = {
         enable = true;
         luaModules = with pkgs.luaPackages; [
           luarocks
