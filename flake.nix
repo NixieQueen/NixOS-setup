@@ -35,6 +35,22 @@
             ];
          };
 
+         awesomeNixie = lib.nixosSystem {
+            inherit system;
+            modules = [
+                ./awesome-configuration.nix
+                home-manager.nixosModules.home-manager {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.backupFileExtension = "backup";
+                    home-manager.useUserPackages = true;
+                    home-manager.users.${user} = {
+                        imports = [ ./awesome-home.nix ];
+                    };
+                }
+            ];
+         };
+
+
          hyprnixie = lib.nixosSystem {
             inherit system;
             modules = [
