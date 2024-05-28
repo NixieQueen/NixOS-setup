@@ -90,15 +90,22 @@ in
 
   # Enable Xserver and use gnome & gdm
   services.xserver = {
-	enable = true;
-	displayManager = {
-		gdm.enable = true;
-		# defaultSession = "none+awesome";
-	};
-	desktopManager = {
-		gnome.enable = true;
-	};
-	# windowManager.awesome.enable = true;
+    enable = true;
+    displayManager = {
+      gdm.enable = true;
+      defaultSession = "none+awesome";
+    };
+    desktopManager = {
+      gnome.enable = false;
+    };
+    windowManager = {
+      awesome = {
+        enable = true;
+        luaModules = with pkgs.luaPackages; [
+          luarocks
+        ];
+      };
+    };
   };  
 
   # Configure keymap in X11

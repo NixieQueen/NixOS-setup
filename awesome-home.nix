@@ -27,8 +27,8 @@
   home.file.".p10k.zsh" = {
     source = ./.p10k.zsh;
   };
-  home.file.".config/doom" = {
-    source = ./doom;
+  home.file.".config" = {
+    source = ./config;
     recursive = true;
   };
 
