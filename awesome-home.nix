@@ -52,8 +52,8 @@
     source = ./config/picom;
     recursive = true;
   };
-  home.file.".config/thunar" = {
-    source = ./config/thunar;
+  home.file.".config/Thunar" = {
+    source = ./config/Thunar;
     recursive = true;
   };
 
