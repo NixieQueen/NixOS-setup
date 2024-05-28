@@ -25,7 +25,7 @@ in
               owner = "awesomeWM";
               repo = "awesome";
               rev = "8b1f8958b46b3e75618bc822d512bb4d449a89aa";
-              sha256 = "";
+              sha256 = "sha256-ZGZ53IWfQfNU8q/hKexFpb/2mJyqtK5M9t9HrXoEJCg=";
             };
             patches = [];
           });
@@ -38,7 +38,7 @@ in
               owner = "FT-Labs";
               repo = "picom";
               rev = "df4c6a3d9b11e14ed7f3142540babea4c775ddb1";
-              sha256 = "";
+              sha256 = "sha256-FmORxY7SLFnAmtQyC82sK36RoUBa94rJ7BsDXjXUCXk=";
             };
             patches = [];
           });
@@ -124,7 +124,7 @@ in
     enable = true;
     displayManager = {
       gdm.enable = true;
-      defaultSession = "none+awesome";
+      #defaultSession = "none+awesome";
     };
     desktopManager = {
       gnome.enable = false;
@@ -242,11 +242,15 @@ in
     };
   };
 
+  location = {
+    latitude = 52.3;
+    longitude = 4.9;
+  };
+
   services = {
     picom = {
       enable = true;
     };
-
     redshift = {
       enable = true;
       brightness = {
@@ -258,7 +262,9 @@ in
         night = 1600;
       };
     };
-
+    displayManager = {
+      defaultSession = "none+awesome";
+    };
     blueman.enable = false;
     printing = {
       enable = true;
