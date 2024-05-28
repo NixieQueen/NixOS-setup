@@ -43,6 +43,7 @@
               {
                 nixpkgs.overlays = [
                   nixpkgs-f2k.overlays.window-managers
+                  nixpkgs-f2k.overlays.compositors
                 ];
               }
 

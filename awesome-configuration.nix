@@ -17,22 +17,6 @@ in
   # Allow unfree stuffs, required for printer
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [
-      (self: super:
-        { picom = super.picom.overrideAttrs (old: rec
-          {
-            src = super.fetchFromGitHub {
-              owner = "FT-Labs";
-              repo = "picom";
-              rev = "df4c6a3d9b11e14ed7f3142540babea4c775ddb1";
-              sha256 = "sha256-FmORxY7SLFnAmtQyC82sK36RoUBa94rJ7BsDXjXUCXk=";
-            };
-            patches = [];
-          });
-        }
-      )
-
-    ];
   };
 
   nix = {
@@ -119,9 +103,9 @@ in
     windowManager = {
       awesome = {
         enable = true;
-        #luaModules = with pkgs.luaPackages; [
-        #  luarocks
-        #];
+        luaModules = with pkgs.luaPackages; [
+          luarocks
+        ];
       };
     };
   };  
