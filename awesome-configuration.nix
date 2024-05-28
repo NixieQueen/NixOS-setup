@@ -24,8 +24,8 @@ in
             src = super.fetchFromGitHub {
               owner = "awesomeWM";
               repo = "awesome";
-              rev = "8b1f8958b46b3e75618bc822d512bb4d449a89aa";
-              sha256 = "sha256-ZGZ53IWfQfNU8q/hKexFpb/2mJyqtK5M9t9HrXoEJCg=";
+              rev = "a1f58ab97c90c85759a3b33a96af2bfd0b6fe78b";
+              sha256 = "sha256-58gWCZcDumyN+bSZ4Jh6mfGtmBCFWDE7aqCpyWEK9x8=";
             };
             patches = [];
           });
@@ -215,6 +215,14 @@ in
   programs = {
     light.enable = true;
 
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
+    };
+
     #zsh.enable = true;
     mtr.enable = true;
     gnupg.agent = {
@@ -248,6 +256,8 @@ in
   };
 
   services = {
+    tumbler.enable = true;
+    gvfs.enable = true;
     picom = {
       enable = true;
     };
