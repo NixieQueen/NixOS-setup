@@ -15,7 +15,38 @@ in
     ];
 
   # Allow unfree stuffs, required for printer
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      (self: super:
+        { awesome = super.awesome.overrideAttrs (old: rec
+          {
+            src = super.fetchFromGitHub {
+              owner = "awesomeWM";
+              repo = "awesome";
+              rev = "8b1f8958b46b3e75618bc822d512bb4d449a89aa";
+              sha256 = "";
+            };
+            patches = [];
+          });
+        }
+      )
+      (self: super:
+        { picom = super.picom.overrideAttrs (old: rec
+          {
+            src = super.fetchFromGitHub {
+              owner = "FT-Labs";
+              repo = "picom";
+              rev = "df4c6a3d9b11e14ed7f3142540babea4c775ddb1";
+              sha256 = "";
+            };
+            patches = [];
+          });
+        }
+      )
+
+    ];
+  };
 
   nix = {
     settings.auto-optimise-store = true;
@@ -118,7 +149,15 @@ in
 	mediaKeys.enable = true;
   };
 
-  security.rtkit.enable = true;
+  security = {
+    polkit = {
+      enable = true;
+    };
+
+    rtkit = {
+      enable = true;
+    };
+  };
 
   # Pulseaudio needs to be disabled
   hardware.pulseaudio.enable = false;
@@ -164,13 +203,18 @@ in
       firefox
       wget
       neofetch
-      btop
+      kitty
+      polkit_gnome
+      polkit
+      playerctl
     ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs = {
+    light.enable = true;
+
     #zsh.enable = true;
     mtr.enable = true;
     gnupg.agent = {
@@ -189,31 +233,47 @@ in
 
   # Enable bluetooth
   hardware.bluetooth = {
-	enable = false;
-	hsphfpd.enable = false;
-	settings = {
-		General = {
-			Enable = "Source,Sink,Media,Socket";
-		};
-	};
+    enable = false;
+    hsphfpd.enable = false;
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
   };
 
   services = {
-	blueman.enable = false;
-	printing = {
-		enable = true;
-		drivers = [ pkgs.cnijfilter2 pkgs.gutenprint pkgs.hplipWithPlugin ];
-	};
-	avahi = {
-		enable = true;
-		nssmdns4 = true;
-		openFirewall = true;
-		publish = {
-			enable = true;
-			addresses = true;
-			userServices = true;
-		};
-	};
+    picom = {
+      enable = true;
+    };
+
+    redshift = {
+      enable = true;
+      brightness = {
+        day = "1";
+        night = "1";
+      };
+      temperature = {
+        day = 5700;
+        night = 1600;
+      };
+    };
+
+    blueman.enable = false;
+    printing = {
+      enable = true;
+      drivers = [ pkgs.cnijfilter2 pkgs.gutenprint pkgs.hplipWithPlugin ];
+    };
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        userServices = true;
+      };
+    };
   };
 
   # List services that you want to enable:

@@ -93,6 +93,7 @@
   home.packages = with pkgs; [
 
     discord
+    btop
 
     # utils
     ripgrep
