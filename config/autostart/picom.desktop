@@ -2,7 +2,7 @@
 Name=picom
 GenericName=compositor
 Comment=Runs the picom daemon as a compositor
-Exec=/usr/bin/picom --animations -b
+Exec=picom --animations -b
 Icon=picom
 Terminal=false
 Type=Application

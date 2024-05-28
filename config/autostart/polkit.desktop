@@ -2,7 +2,7 @@
 Name=gnome-polkit
 GenericName=polkit
 Comment=Runs the polkit daemon for auth
-Exec=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+Exec=polkit-agent-helper-1
 Icon=polkit
 Terminal=false
 Type=Application

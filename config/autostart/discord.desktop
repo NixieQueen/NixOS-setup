@@ -2,7 +2,7 @@
 Name=discord
 GenericName=communications
 Comment=Runs the discord app
-Exec=/usr/bin/discord
+Exec=discord
 Icon=discord
 Terminal=false
 Type=Application

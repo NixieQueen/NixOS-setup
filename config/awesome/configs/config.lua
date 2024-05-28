@@ -3,7 +3,7 @@
 -- For custom colours, please refer to your theme's init.lua file
 local config = {
   borders = dpi(0),
-  battery = false,
+  battery = true,
   screen_setup = 'dual',
   gaps = dpi(5),
   desktopicons = true,

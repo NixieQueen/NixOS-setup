@@ -6,7 +6,7 @@
 
 let
     user="nixie";
-    hostname="nixieos";
+    hostname="awesomeNixie";
 in
 {
   imports =
@@ -230,6 +230,9 @@ in
   };
 
   services = {
+    upower = {
+      enable = true;
+    };
     tlp = {
       enable = true;
       settings = {
@@ -239,10 +242,6 @@ in
     };
     tumbler.enable = true;
     gvfs.enable = true;
-    picom = {
-      enable = true;
-      package = pkgs.picom-ft-labs;
-    };
     redshift = {
       enable = true;
       brightness = {

@@ -127,8 +127,11 @@
 
     discord
     btop
+    picom-ft-labs
 
     # utils
     ripgrep
+    dex
+
   ];
 }
