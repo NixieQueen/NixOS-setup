@@ -27,9 +27,42 @@
   home.file.".p10k.zsh" = {
     source = ./.p10k.zsh;
   };
-  home.file.".config" = {
-    source = ./config;
+
+  home.file.".config/autostart" = {
+    source = ./config/autostart;
     recursive = true;
+  };
+  home.file.".config/awesome" = {
+    source = ./config/awesome;
+    recursive = true;
+  };
+  home.file.".config/btop" = {
+    source = ./config/btop;
+    recursive = true;
+  };
+  home.file.".config/doom" = {
+    source = ./config/doom;
+    recursive = true;
+  };
+  home.file.".config/kitty" = {
+    source = ./config/kitty;
+    recursive = true;
+  };
+  home.file.".config/picom" = {
+    source = ./config/picom;
+    recursive = true;
+  };
+  home.file.".config/thunar" = {
+    source = ./config/thunar;
+    recursive = true;
+  };
+
+  home.file.".Xresources" = {
+    text = ''
+      Xft.dpi: 96
+      Xcursor.theme: Sweet-cursors
+      Xcursor.size: 24
+    '';
   };
 
   programs = {

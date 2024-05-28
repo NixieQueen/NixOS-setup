@@ -42,8 +42,8 @@
 
               {
                 nixpkgs.overlays = [
-                  nixpkgs-f2k.overlays.window-managers.awesome-git
-                  nixpkgs-f2k.overlays.compositors.picom-ft-labs
+                  nixpkgs-f2k.overlays.window-managers
+                  nixpkgs-f2k.overlays.compositors
                 ];
               }
 

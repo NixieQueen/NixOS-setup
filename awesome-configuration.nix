@@ -17,6 +17,8 @@ in
   # Allow unfree stuffs, required for printer
   nixpkgs = {
     config.allowUnfree = true;
+    overlays = [
+    ];
   };
 
   nix = {
@@ -101,8 +103,9 @@ in
       gnome.enable = false;
     };
     windowManager = {
-      nixpkgs-f2k.awesome-git = {
+      awesome = {
         enable = true;
+        package = pkgs.awesome-git;
         luaModules = with pkgs.luaPackages; [
           luarocks
         ];
@@ -227,10 +230,18 @@ in
   };
 
   services = {
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      };
+    };
     tumbler.enable = true;
     gvfs.enable = true;
     picom = {
       enable = true;
+      package = pkgs.picom-ft-labs;
     };
     redshift = {
       enable = true;
