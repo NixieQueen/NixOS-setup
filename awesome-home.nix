@@ -27,7 +27,8 @@
   home.file.".config/awesome" = {
     source = builtins.fetchGit {
       url = "https://github.com/NixieQueen/awesomeWM-setup.git";
-      rev = "07fca786154551f90f36535bfb21f8ca4abd5027";
+      #rev = "07fca786154551f90f36535bfb21f8ca4abd5027";
+      allRefs = true;
     };
   };
 
