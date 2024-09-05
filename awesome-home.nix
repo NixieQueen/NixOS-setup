@@ -27,8 +27,8 @@
   home.file.".config/awesome" = {
     source = builtins.fetchGit {
       url = "https://github.com/NixieQueen/awesomeWM-setup.git";
-      #rev = "07fca786154551f90f36535bfb21f8ca4abd5027";
-      allRefs = true;
+      rev = "8b7157ec4b8a7f32fab2fddcdfe6a48eb7e8ecdf";
+      #allRefs = true;
     };
   };
 
@@ -68,6 +68,37 @@
       Xcursor.size: 24
     '';
   };
+
+  gtk = {
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+
+    theme = {
+      name = "palenight";
+      package = pkgs.palenight-theme;
+    };
+
+    cursorTheme = {
+      name = "Numix-Cursor";
+      package = pkgs.numix-cursor-theme;
+    };
+
+    gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+  };
+
+  home.sessionVariables.GTK_THEME = "palenight";
 
   programs = {
     git = {

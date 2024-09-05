@@ -167,6 +167,8 @@ in
 
     shells = with pkgs; [ zsh ];
     systemPackages = with pkgs; [
+      luaPackages.luarocks
+      eog
       emacs
       firefox
       wget
