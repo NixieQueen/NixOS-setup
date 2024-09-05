@@ -24,36 +24,39 @@
 #    '';
 #  };
 
+  home.file.".config/awesome" = {
+    source = builtins.fetchGit {
+      url = "https://github.com/NixieQueen/awesomeWM-setup.git";
+      rev = "07fca786154551f90f36535bfb21f8ca4abd5027";
+    };
+  };
+
   home.file.".p10k.zsh" = {
-    source = ./.p10k.zsh;
+    source = ./setup/.p10k.zsh;
   };
 
   home.file.".config/autostart" = {
-    source = ./config/autostart;
-    recursive = true;
-  };
-  home.file.".config/awesome" = {
-    source = ./config/awesome;
+    source = ./setup/config/autostart;
     recursive = true;
   };
   home.file.".config/btop" = {
-    source = ./config/btop;
+    source = ./setup/config/btop;
     recursive = true;
   };
   home.file.".config/doom" = {
-    source = ./config/doom;
+    source = ./setup/config/doom;
     recursive = true;
   };
   home.file.".config/kitty" = {
-    source = ./config/kitty;
+    source = ./setup/config/kitty;
     recursive = true;
   };
   home.file.".config/picom" = {
-    source = ./config/picom;
+    source = ./setup/config/picom;
     recursive = true;
   };
   home.file.".config/Thunar" = {
-    source = ./config/Thunar;
+    source = ./setup/config/Thunar;
     recursive = true;
   };
 
@@ -104,7 +107,7 @@
         }
         {
             name = "powerlevel10k-config";
-            src = ./.p10k.zsh;
+            src = ./setup/.p10k.zsh;
             file = "p10k.zsh";
         }
         ];

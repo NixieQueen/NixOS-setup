@@ -25,10 +25,10 @@
 #  };
 
   home.file.".p10k.zsh" = {
-    source = ./.p10k.zsh;
+    source = ./setup/.p10k.zsh;
   };
   home.file.".config" = {
-    source = ./config;
+    source = ./setup/config;
     recursive = true;
   };
 
@@ -71,7 +71,7 @@
         }
         {
             name = "powerlevel10k-config";
-            src = ./.p10k.zsh;
+            src = ./setup/.p10k.zsh;
             file = "p10k.zsh";
         }
         ];
