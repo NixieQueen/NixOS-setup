@@ -70,19 +70,21 @@
   };
 
   gtk = {
+    enable = true;
+
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "Zafiro-Icons-Dark";
+      package = pkgs.zafiro-icons;
     };
 
     theme = {
-      name = "palenight";
-      package = pkgs.palenight-theme;
+      name = "Dracula-pink-accent";
+      package = pkgs.dracula-theme;
     };
 
     cursorTheme = {
-      name = "Numix-Cursor";
-      package = pkgs.numix-cursor-theme;
+      name = "posy-s-cursor-black";
+      package = pkgs.posy-cursors;
     };
 
     gtk3.extraConfig = {
