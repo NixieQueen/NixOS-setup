@@ -95,10 +95,34 @@ in
   # Enable Xserver and use gnome & gdm
   services.xserver = {
     enable = true;
+
     displayManager = {
-      gdm.enable = true;
+      gdm.enable = false;
       #defaultSession = "none+awesome";
+      lightdm = {
+        enable = true;
+        greeters.slick = {
+          enable = true;
+          draw-user-backgrounds = true;
+          iconTheme = {
+            name = "Papirus-Dark";
+            package = pkgs.papirus-icon-theme;
+          };
+          theme = {
+            name = "palenight";
+            package = pkgs.palenight-theme;
+          };
+          cursorTheme = {
+            name = "Numix-Cursor";
+            package = pkgs.numix-cursor-theme;
+          };
+          font = {
+            package = pkgs.fira-code;
+          };
+        };
+      };
     };
+
     desktopManager = {
       gnome.enable = false;
     };
