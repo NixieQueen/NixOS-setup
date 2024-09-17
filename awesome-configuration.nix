@@ -288,10 +288,12 @@ in
         WIFI_PWR_ON_BAT = "on";
       };
     };
+
     tumbler.enable = true;
     gvfs.enable = true;
     redshift = {
       enable = true;
+      executable = "/bin/redshift-gtk";
       brightness = {
         day = "1";
         night = "1";
