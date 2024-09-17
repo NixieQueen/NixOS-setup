@@ -103,22 +103,22 @@ in
         enable = true;
         greeters.slick = {
           enable = true;
-          draw-user-backgrounds = true;
-          iconTheme = {
-            name = "Papirus-Dark";
-            package = pkgs.papirus-icon-theme;
-          };
-          theme = {
-            name = "palenight";
-            package = pkgs.palenight-theme;
-          };
-          cursorTheme = {
-            name = "Numix-Cursor";
-            package = pkgs.numix-cursor-theme;
-          };
-          font = {
-            package = pkgs.fira-code;
-          };
+          #draw-user-backgrounds = true;
+          #iconTheme = {
+          #  name = "Papirus-Dark";
+          #  package = pkgs.papirus-icon-theme;
+          #};
+          #theme = {
+          #  name = "palenight";
+          #  package = pkgs.palenight-theme;
+          #};
+          #cursorTheme = {
+          #  name = "Numix-Cursor";
+          #  package = pkgs.numix-cursor-theme;
+          #};
+          #font = {
+          #  package = pkgs.fira-code;
+          #};
         };
       };
     };
