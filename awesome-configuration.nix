@@ -103,22 +103,25 @@ in
         enable = true;
         greeters.slick = {
           enable = true;
-          #draw-user-backgrounds = true;
-          #iconTheme = {
-          #  name = "Papirus-Dark";
-          #  package = pkgs.papirus-icon-theme;
-          #};
-          #theme = {
-          #  name = "palenight";
-          #  package = pkgs.palenight-theme;
-          #};
-          #cursorTheme = {
-          #  name = "Numix-Cursor";
-          #  package = pkgs.numix-cursor-theme;
-          #};
-          #font = {
-          #  package = pkgs.fira-code;
-          #};
+          draw-user-backgrounds = true;
+          extraConfig = "background=~/.config/awesome/themes/nixie-theme/backgrounds/MountainDragon.png";
+          iconTheme = {
+            name = "Papirus-Dark";
+            package = pkgs.papirus-icon-theme;
+          };
+          theme = {
+            package = pkgs.gnome-themes-extra;
+            name = "Adwaita";
+            #name = "palenight";
+            #package = pkgs.palenight-theme;
+          };
+          cursorTheme = {
+            name = "Numix-Cursor";
+            package = pkgs.numix-cursor-theme;
+          };
+          font = {
+            package = pkgs.fira-code;
+          };
         };
       };
     };
@@ -148,6 +151,23 @@ in
 
     rtkit = {
       enable = true;
+    };
+  };
+
+  # Making a service file for gnome-polkit
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
     };
   };
 
@@ -269,7 +289,7 @@ in
         CPU_SCALING_MIN_FREQ_ON_AC = 400000;
         CPU_SCALING_MAX_FREQ_ON_AC = 4971000;
         CPU_SCALING_MIN_FREQ_ON_BAT = 400000;
-        CPU_SCALING_MAX_FREQ_ON_BAT = 1500000;
+        CPU_SCALING_MAX_FREQ_ON_BAT = 3000000;
 
         CPU_MIN_PERF_ON_AC = 400000;
         CPU_MAX_PERF_ON_AC = 4971000;

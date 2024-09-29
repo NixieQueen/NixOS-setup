@@ -27,7 +27,7 @@
   home.file.".config/awesome" = {
     source = builtins.fetchGit {
       url = "https://github.com/NixieQueen/awesomeWM-setup.git";
-      rev = "8b7157ec4b8a7f32fab2fddcdfe6a48eb7e8ecdf";
+      rev = "470d5f4e065e55ee747e8010736c6f167a179f0e";
       #allRefs = true;
     };
   };
@@ -126,7 +126,7 @@
         syntaxHighlighting.enable = true;
 
         shellAliases = {
-            update = "cd ~/nixosConfig && sudo nixos-rebuild switch --flake .#";
+            update = "cd ~/nixosConfig && sudo nixos-rebuild switch --flake .# && doom upgrade";
             fetch = "clear && neofetch";
             emacs = "doom run";
         };
@@ -161,14 +161,20 @@
   };
 
   home.packages = with pkgs; [
-
+    dconf
     discord
     btop
     picom-ft-labs
+    openfortivpn
+
+    libreoffice-fresh
 
     # utils
     ripgrep
     dex
 
+    hunspell
+    hunspellDicts.uk_UA
+    hunspellDicts.nl_nl
   ];
 }
