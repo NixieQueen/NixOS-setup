@@ -167,6 +167,14 @@
     picom-ft-labs
     openfortivpn
 
+    thunderbird-bin
+
+    krita
+
+    teams-for-linux
+
+    python39
+
     libreoffice-fresh
 
     # utils
@@ -176,5 +184,20 @@
     hunspell
     hunspellDicts.uk_UA
     hunspellDicts.nl_nl
+
+    # Setup lutris and its dependancies
+    (lutris.override {
+      extraLibraries = pkgs: [
+        # List lutris dependancies here
+      ];
+      extraPkgs = pkgs: [
+        # Extra lutris pkgs
+      ];
+    })
+    lutris
+    winetricks
+    #wine
+    #wine64
+    wineWowPackages.stable
   ];
 }

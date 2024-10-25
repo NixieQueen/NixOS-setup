@@ -28,13 +28,14 @@ in
        dates = "weekly";
        options = "--delete-older-than 7d";
     };
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = "experimental-features = nix-command flakes";
   };
 
   fonts.packages = with pkgs; [
+    liberation_ttf
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     liberation_ttf
     fira-code
@@ -70,6 +71,8 @@ in
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -171,6 +174,17 @@ in
     };
   };
 
+  xdg = {
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = false;
+      config.common.default = "*";
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
+
   # Pulseaudio needs to be disabled
   hardware.pulseaudio.enable = false;
 
@@ -211,7 +225,12 @@ in
 
     shells = with pkgs; [ zsh ];
     systemPackages = with pkgs; [
+      openconnect
       luaPackages.luarocks
+      zip
+      unzip
+      alsa-utils
+      pavucontrol
       eog
       emacs
       firefox
@@ -221,6 +240,11 @@ in
       polkit_gnome
       polkit
       playerctl
+      xdg-desktop-portal-gtk
+      appimage-run
+      python3
+
+      # Weird a/o strange dependencies
     ];
   };
 
@@ -270,16 +294,28 @@ in
   };
 
   services = {
+    samba = {
+      enable = true;
+      settings = {
+        global = {
+          security = "user";
+          workgroup = "CBH";
+        };
+      };
+      openFirewall = true;
+    };
+
     upower = {
       enable = true;
     };
+
     tlp = {
       enable = true;
       settings = {
         TLP_ENABLE = 1;
 
-        CPU_DRIVER_OPMODE_ON_AC = "active";
-        CPU_DRIVER_OPMODE_ON_BAT = "guided";
+        CPU_DRIVER_OPMODE_ON_AC = "passive";
+        CPU_DRIVER_OPMODE_ON_BAT = "passive";
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
         CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
