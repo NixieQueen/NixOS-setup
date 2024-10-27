@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=picom
+GenericName=compositor
+Comment=Runs the picom daemon as a compositor
+Exec=picom --animations -b
+Icon=picom
+Terminal=false
+Type=Application
+Hidden=false
+StartupNotify=true
