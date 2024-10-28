@@ -16,4 +16,11 @@
       Xcursor.size: 24
     '';
   };
+  home.file.".config/awesome" = {
+    source = builtins.fetchGit {
+      url = "https://github.com/NixieQueen/awesomeWM-setup.git";
+      rev = "6ed2696b2fa1dca76a9ae847d44de064c03afb13";
+      #allRefs = true;
+    };
+  };
 }

@@ -1,8 +1,8 @@
 { useWayland ? false, ... }:
 
 {
-  imports = if useWayland then
-    [ /X11.nix ]
+  import = if useWayland then
+    ./X11.nix
   else
-    [ /Wayland.nix ];
+    ./Wayland.nix;
 }

@@ -2,7 +2,7 @@
 
 {
   imports = if (configType == "laptop") then
-    [ /base /laptop ]
+    [ ./base ./laptop ]
   else
-    [ /base /desktop ];
+    [ ./base ./desktop ];
 }

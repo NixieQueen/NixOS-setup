@@ -1,10 +1,13 @@
-{ config, pkgs, hostNameNT, ... }:
+{ config, pkgs, hostnameNT, ... }:
 
 {
-  networking.hostName = hostNameNT;
-  networking.firewall = enable;
-  networking.firewall.allowPing = true;
-
+  networking = {
+    hostname = hostnameNT;
+    networking.firewall = {
+      enable = true;
+      allowPing = true;
+    };
+  };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";

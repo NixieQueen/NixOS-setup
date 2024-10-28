@@ -13,6 +13,8 @@
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k }:
     let
         hostname = "nixieFramework";
+        laptopConfig = "laptop";
+        desktopConfig = "desktop";
         user = "nixie";
         homeDirectory = "/home/nixie";
         system = "x86_64-linux";
@@ -82,20 +84,7 @@
                 ];
               }
 
-              /configurations/system ({hostnameNT = hostname;})
-              /configurations/hardware ({configType = "laptop";})
-              /configurations/users/${user}/${user}.nix
-              /configurations/drivers ({configType = "laptop";})
-              /configurations/desktop-environments ({useWayland = false;})
-              /configurations/desktop-environments/awesomewm
-
-              /configurations/services/audio.nix
-              /configurations/services/wifi.nix
-
-              /configurations/programs/fonts.nix
-              /configurations/programs/gamemode.nix
-              /configurations/programs/steam.nix
-              /configurations/programs/general.nix
+              (import ./configurations/setup/awesomewm/base {user = user; configType = laptopConfig; hostname = hostname; })
 
               home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
@@ -103,15 +92,15 @@
                 home-manager.useUserPackages = true;
                 home-manager.users.${user} = {
                   imports = [
-                    /configurations/users/${user}/home-manager ({homeUsername = user; homeDirectory = homeDirectory;})
-                    /configurations/users/${user}/home-manager/dotfiles ({configType = "laptop";})
-                    /configurations/users/${user}/home-manager/drivers
+                    ./configurations/users/${user}/home-manager ({homeUsername = user; homeDirectory = homeDirectory;})
+                    ./configurations/users/${user}/home-manager/dotfiles ({configType = "laptop";})
+                    ./configurations/users/${user}/home-manager/drivers
 
-                    /configurations/users/${user}/home-manager/programs/general.nix
-                    /configurations/users/${user}/home-manager/programs/git.nix
-                    /configurations/users/${user}/home-manager/programs/gtk.nix
-                    /configurations/users/${user}/home-manager/programs/librewolf.nix
-                    /configurations/users/${user}/home-manager/programs/zsh.nix
+                    ./configurations/users/${user}/home-manager/programs/general.nix
+                    ./configurations/users/${user}/home-manager/programs/git.nix
+                    ./configurations/users/${user}/home-manager/programs/gtk.nix
+                    ./configurations/users/${user}/home-manager/programs/librewolf.nix
+                    ./configurations/users/${user}/home-manager/programs/zsh.nix
                   ];
                 };
               }
