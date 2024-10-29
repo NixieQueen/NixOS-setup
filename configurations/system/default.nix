@@ -1,8 +1,8 @@
-{ hostnameNT, ... }:
+{ config, ... }:
 
 {
   imports = [
     ./general.nix
-    (import ./networking.nix {hostnameNT = hostnameNT;})
+    ./networking.nix
   ];
 }

@@ -1,8 +1,8 @@
-{ hostnameNT, ... }:
+{ config, ... }:
 
 {
   networking = {
-    hostname = hostnameNT;
+    hostname = config.custom.hostname;
     networking.firewall = {
       enable = true;
       allowPing = true;

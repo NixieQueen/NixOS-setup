@@ -25,7 +25,7 @@
         lib = nixpkgs.lib;
     in {
        nixosConfigurations = {
-         awesomeNixieLaptop = lib.nixosSystem {
+         awesomeNixie = lib.nixosSystem {
             inherit system;
             modules = [
 
@@ -84,27 +84,17 @@
                 ];
               }
 
-              ({ self, nixpkgs, home-manager, nixpkgs-f2k }: let
-                configType = laptopConfig;
-                in
-                  {
-              base = import ./configurations/setups/awesomewm/base {inherit user hostname configType;};
-                  })
+              #./configurations/setups/awesomewm/base
+              ./awesome-configuration.nix
+
               home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";
                 home-manager.useUserPackages = true;
                 home-manager.users.${user} = {
                   imports = [
-                    ./configurations/users/${user}/home-manager ({homeUsername = user; homeDirectory = homeDirectory;})
-                    ./configurations/users/${user}/home-manager/dotfiles ({configType = "laptop";})
-                    ./configurations/users/${user}/home-manager/drivers
-
-                    ./configurations/users/${user}/home-manager/programs/general.nix
-                    ./configurations/users/${user}/home-manager/programs/git.nix
-                    ./configurations/users/${user}/home-manager/programs/gtk.nix
-                    ./configurations/users/${user}/home-manager/programs/librewolf.nix
-                    ./configurations/users/${user}/home-manager/programs/zsh.nix
+                    #./configurations/setups/awesomewm/home
+                    ./awesome-home.nix
                   ];
                 };
               }
