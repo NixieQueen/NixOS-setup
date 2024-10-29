@@ -1,8 +1,8 @@
 { configType ? "laptop" , ... }:
 
 {
-  import = if (configType == "laptop") then
-    ./base ./laptop
+  imports = if (configType == "laptop") then
+    [./base ./laptop]
   else
-    ./base ./desktop;
+    [./base ./desktop];
 }

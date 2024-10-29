@@ -84,8 +84,12 @@
                 ];
               }
 
-              (import ./configurations/setup/awesomewm/base {user = user; configType = laptopConfig; hostname = hostname; })
-
+              ({ self, nixpkgs, home-manager, nixpkgs-f2k }: let
+                configType = laptopConfig;
+                in
+                  {
+              base = import ./configurations/setups/awesomewm/base {inherit user hostname configType;};
+                  })
               home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";

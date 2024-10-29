@@ -1,4 +1,4 @@
-{ config, pkgs, hostnameNT, ... }:
+{ hostnameNT, ... }:
 
 {
   networking = {

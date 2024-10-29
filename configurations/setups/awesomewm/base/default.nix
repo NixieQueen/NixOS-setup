@@ -1,20 +1,20 @@
-{ configType ? "laptop" , hostname ? "nixieFramework", user, pkgs, lib, config, ... }:
+{ configType ? "laptop" , hostname ? "nixieFramework", user, ... }:
 
 {
   import = [
-    (import ../../configurations/system {hostnameNT = hostname;})
-    (import ../../configurations/hardware {configType = configType;})
-    ../../configurations/users/${user}/${user}.nix
-      (import ../../configurations/drivers {configType = configType;})
-      (import ../../configurations/desktop-environments {useWayland = false;})
-      ../../configurations/desktop-environments/awesomewm
+    (import ../../../system {hostnameNT = hostname;})
+    (import ../../../hardware {configType = configType;})
+    ../../../users/${user}/${user}.nix
+    (import ../../../drivers {configType = configType;})
+    (import ../../../desktop-environments {useWayland = false;})
+    ../../../desktop-environments/awesomewm
 
-      ../../configurations/services/audio.nix
-      ../../configurations/services/wifi.nix
+    ../../../services/audio.nix
+    ../../../services/wifi.nix
 
-      ../../configurations/programs/fonts.nix
-      ../../configurations/programs/gamemode.nix
-      ../../configurations/programs/steam.nix
-      ../../configurations/programs/general.nix
+    ../../../programs/fonts.nix
+    ../../../programs/gamemode.nix
+    ../../../programs/steam.nix
+    ../../../programs/general.nix
   ];
 }
