@@ -1,8 +1,8 @@
-{ config, pkgs, homeUsername, homeDirectory, ... }:
+{ config, pkgs, ... }:
 
 {
-  home.username = homeUsername;
-  home.homeDirectory = homeDirectory;
+  home.username = "nixie";
+  home.homeDirectory = "/home/nixie";
 
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;

@@ -217,9 +217,9 @@ in
   # $ nix search wget
   environment = {
     sessionVariables = {
-      GDK_SCALE = "2";
+      GDK_SCALE = "1";
       GDK_DPI_SCALE = "0.5";
-      _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+      _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1";
       NIXOS_OZONE_WL = "1";
       emacs = "doom run";
     };

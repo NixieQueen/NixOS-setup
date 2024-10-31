@@ -85,7 +85,7 @@
               }
 
               #./configurations/setups/awesomewm/base
-              ./awesome-configuration.nix
+              ./configurations/setups/awesomewm-laptop/base
 
               home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
@@ -94,7 +94,7 @@
                 home-manager.users.${user} = {
                   imports = [
                     #./configurations/setups/awesomewm/home
-                    ./awesome-home.nix
+                    ./configurations/setups/awesomewm-laptop/home
                   ];
                 };
               }

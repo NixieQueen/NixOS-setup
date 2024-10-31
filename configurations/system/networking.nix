@@ -2,7 +2,7 @@
 
 {
   networking = {
-    hostname = config.custom.hostname;
+    hostname = "NixieFramework";
     networking.firewall = {
       enable = true;
       allowPing = true;

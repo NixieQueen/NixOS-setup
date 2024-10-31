@@ -2,11 +2,15 @@
 
 {
   imports = [
-    ../../../system
-    ../../../hardware
-    ../../../users/${config.user}/${config.user}.nix
-    ../../../drivers
-    ../../../desktop-environments
+    ../../../system/general.nix
+    ../../../system/networking.nix
+
+    ../../../hardware/laptop
+
+    ../../../drivers/base
+    ../../../drivers/laptop
+
+    ../../../desktop-environments/X11.nix
     ../../../desktop-environments/awesomewm
 
     ../../../services/audio.nix
