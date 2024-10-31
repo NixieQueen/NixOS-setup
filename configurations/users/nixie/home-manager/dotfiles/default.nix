@@ -3,7 +3,7 @@
 {
   home.file.".config" = {
     recursive = true;
-    source = ./dot-files;
+    source = ./dot-config;
   };
   home.file."" = {
     recursive = true;

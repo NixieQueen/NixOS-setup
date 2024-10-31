@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     liberation_ttf
     noto-fonts
     noto-fonts-cjk-sans
