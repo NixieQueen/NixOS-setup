@@ -25,7 +25,7 @@
         lib = nixpkgs.lib;
     in {
        nixosConfigurations = {
-         awesomeNixie = lib.nixosSystem {
+         awesomeNixieLaptop = lib.nixosSystem {
             inherit system;
             modules = [
 

@@ -3,11 +3,11 @@
 {
   home.file.".config" = {
     recursive = true;
-    source = /dot-files;
+    source = ./dot-files;
   };
   home.file."" = {
     recursive = true;
-    source = /home-folder;
+    source = ./home-folder;
   };
   home.file.".Xresources" = {
     text = ''

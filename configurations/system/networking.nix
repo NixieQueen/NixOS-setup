@@ -2,8 +2,8 @@
 
 {
   networking = {
-    hostname = "NixieFramework";
-    networking.firewall = {
+    hostName = "NixieFramework";
+    firewall = {
       enable = true;
       allowPing = true;
     };

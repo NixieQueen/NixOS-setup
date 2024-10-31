@@ -1,11 +1,16 @@
 { config, ... }:
 
+let
+    user = "nixie";
+in
 {
   imports = [
     ../../../system/general.nix
     ../../../system/networking.nix
 
     ../../../hardware/laptop
+
+    ../../../users/${user}/${user}.nix
 
     ../../../drivers/base
     ../../../drivers/laptop
