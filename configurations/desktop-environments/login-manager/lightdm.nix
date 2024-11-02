@@ -10,7 +10,7 @@
         greeters.slick = {
           enable = true;
           draw-user-backgrounds = true;
-          extraConfig = "background=~/.config/awesome/themes/nixie-theme/backgrounds/MountainDragon.png";
+          extraConfig = "background=/home/nixie/.config/awesome/themes/nixie-theme/backgrounds/MountainDragon.png";
           iconTheme = {
             name = "Papirus-Dark";
             package = pkgs.papirus-icon-theme;
