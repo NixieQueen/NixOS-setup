@@ -5,9 +5,9 @@
     recursive = true;
     source = ./dot-config;
   };
-  home.file."" = {
+  home.file.".p10k.zsh" = {
     recursive = true;
-    source = ./home-folder;
+    source = ./home-folder/.p10k.zsh;
   };
   home.file.".Xresources" = {
     text = ''
@@ -19,7 +19,7 @@
   home.file.".config/awesome" = {
     source = builtins.fetchGit {
       url = "https://github.com/NixieQueen/awesomeWM-setup.git";
-      rev = "6ed2696b2fa1dca76a9ae847d44de064c03afb13";
+      rev = "0730171a7bcd9bdfb85833b95e22bb861ce92594";
       #allRefs = true;
     };
   };

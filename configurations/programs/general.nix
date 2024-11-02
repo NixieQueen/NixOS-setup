@@ -4,6 +4,7 @@
     environment.systemPackages = with pkgs; [
         openconnect
         luaPackages.luarocks
+        lua-pam
         zip
         unzip
         alsa-utils

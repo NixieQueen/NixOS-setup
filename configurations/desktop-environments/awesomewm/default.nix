@@ -10,8 +10,9 @@
       awesome = {
         enable = true;
         package = pkgs.awesome-git;
-        luaModules = with pkgs.luaPackages; [
-          luarocks
+        luaModules = with pkgs; [
+          luaPackages.luarocks
+          lua-pam
         ];
       };
     };

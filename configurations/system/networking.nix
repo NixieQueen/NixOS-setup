@@ -2,7 +2,7 @@
 
 {
   networking = {
-    hostName = "NixieFramework";
+    hostName = "awesomeNixieLaptop";
     firewall = {
       enable = true;
       allowPing = true;
