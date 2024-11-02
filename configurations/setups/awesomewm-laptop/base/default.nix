@@ -20,6 +20,8 @@ in
 
     ../../../services/audio.nix
     ../../../services/wifi.nix
+    ../../../services/tlp-laptop.nix
+    ../../../services/upower.nix
 
     ../../../programs/fonts.nix
     ../../../programs/gamemode.nix

@@ -1,8 +1,11 @@
 { config, ... }:
-
+let
+  #hostname = "hyprNixieLaptop";
+  hostname = "awesomeNixieLaptop";
+in
 {
   networking = {
-    hostName = "hyprNixieLaptop";
+    hostName = hostname;
     firewall = {
       enable = true;
       allowPing = true;
