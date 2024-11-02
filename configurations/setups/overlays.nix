@@ -1,9 +1,7 @@
-{ config, lib, pkgs, nixpkgs-f2k, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   nixpkgs.overlays = [
-    nixpkgs-f2k.overlays.window-managers # window managers such as awesome or river
-
     (final: prev: {
       lua-pam = (pkgs.luaPackages.lua-pam.override{}).overrideAttrs (oldAttrs: {
         nativeBuildInputs = with pkgs; [ cmake ];

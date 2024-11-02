@@ -2,7 +2,7 @@
 
 {
   networking = {
-    hostName = "awesomeNixieLaptop";
+    hostName = "hyprNixieLaptop";
     firewall = {
       enable = true;
       allowPing = true;

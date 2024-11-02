@@ -30,7 +30,9 @@
             modules = [
 
               ./configurations/setups/overlays.nix
-
+              {
+                nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];
+              }
               #./configurations/setups/awesomewm/base
               ./configurations/setups/awesomewm-laptop/base
 
@@ -47,6 +49,31 @@
               }
             ];
          };
+
+          hyprNixieLaptop = lib.nixosSystem {
+            inherit system;
+            modules = [
+
+              ./configurations/setups/overlays.nix
+              {
+                #nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];
+              }
+              ./configurations/setups/hyprland-laptop/base
+
+              home-manager.nixosModules.home-manager {
+                home-manager.useGlobalPkgs = true;
+                home-manager.backupFileExtension = "backup";
+                home-manager.useUserPackages = true;
+                home-manager.users.${user} = {
+                  imports = [
+                    ./configurations/setups/hyprland-laptop/home
+                  ];
+                };
+              }
+            ];
+         };
+
+
        };
     };
 }
