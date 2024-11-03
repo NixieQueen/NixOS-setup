@@ -11,7 +11,7 @@
 
       # Valid options: powersave performance schedutil
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
       # Valid options: performance balance_performance default balance_power power
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
       CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
@@ -37,7 +37,7 @@
 
       # Valid options: performance balanced low-power
       PLATFORM_PROFILE_ON_AC = "performance";
-      PLATFORM_PROFILE_ON_BAT = "balanced"; # "low-power";
+      PLATFORM_PROFILE_ON_BAT = "low-power";
 
       MEM_SLEEP_ON_AC = "s2idle";
       MEM_SLEEP_ON_BAT = "deep";

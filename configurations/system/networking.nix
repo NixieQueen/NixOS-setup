@@ -1,7 +1,7 @@
 { config, ... }:
 let
   #hostname = "hyprNixieLaptop";
-  hostname = "awesomeNixieLaptop";
+  hostname = "hyprNixieLaptop";
 in
 {
   networking = {
