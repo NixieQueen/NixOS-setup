@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "Numix-Cursor";
+    package = pkgs.numix-cursor-theme;
+    size = 24;
+  };
+
   gtk = {
     enable = true;
 

@@ -26,5 +26,7 @@
         lutris
         winetricks
         wineWowPackages.stable
+
+        #hyprpaper
     ];
 }

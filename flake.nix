@@ -8,9 +8,14 @@
         url = github:nix-community/home-manager;
         inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k }:
+  outputs = { self, nixpkgs, hyprland, home-manager, nixpkgs-f2k, ... } @ inputs:
     let
         hostname = "nixieFramework";
         laptopConfig = "laptop";
@@ -33,6 +38,9 @@
               {
                 nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];
               }
+              {
+                networking.hostName = "awesomeNixieLaptop";
+              }
               #./configurations/setups/awesomewm/base
               ./configurations/setups/awesomewm-laptop/base
 
@@ -51,6 +59,7 @@
          };
 
           hyprNixieLaptop = lib.nixosSystem {
+            specialArgs = { inherit inputs; };
             inherit system;
             modules = [
 
@@ -58,9 +67,13 @@
               {
                 #nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];
               }
+              {
+                networking.hostName = "hyprNixieLaptop";
+              }
               ./configurations/setups/hyprland-laptop/base
 
               home-manager.nixosModules.home-manager {
+                home-manager.extraSpecialArgs = { inherit inputs; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";
                 home-manager.useUserPackages = true;

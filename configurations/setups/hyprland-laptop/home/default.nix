@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 
 let
       user = "nixie";
@@ -6,6 +6,7 @@ in
 {
   imports = [
       ../../../users/${user}/home-manager
+      ../../../desktop-environments/hyprland/home
 
       ../../../users/${user}/home-manager/dotfiles
       ../../../users/${user}/home-manager/drivers

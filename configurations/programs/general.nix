@@ -19,6 +19,7 @@
         polkit
         playerctl
         xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland
         appimage-run
         python3
     ];

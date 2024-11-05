@@ -26,6 +26,7 @@ in
 
     ../../../programs/fonts.nix
     ../../../programs/gamemode.nix
+    ../../../programs/gamescope.nix
     ../../../programs/steam.nix
     ../../../programs/general.nix
   ];

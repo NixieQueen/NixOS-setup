@@ -1,11 +1,7 @@
 { config, ... }:
-let
-  #hostname = "hyprNixieLaptop";
-  hostname = "hyprNixieLaptop";
-in
+
 {
   networking = {
-    hostName = hostname;
     firewall = {
       enable = true;
       allowPing = true;

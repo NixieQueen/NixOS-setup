@@ -5,6 +5,7 @@
     displayManager = {
       gdm.enable = false;
       #defaultSession = "none+awesome";
+      defaultSession = "none+hyprland";
       lightdm = {
         enable = true;
         greeters.slick = {

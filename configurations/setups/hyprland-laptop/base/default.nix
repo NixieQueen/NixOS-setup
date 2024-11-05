@@ -16,7 +16,7 @@ in
     ../../../drivers/laptop
 
     ../../../desktop-environments/Wayland.nix
-    ../../../desktop-environments/hyprland
+    ../../../desktop-environments/hyprland/base
 
     ../../../services/audio.nix
     ../../../services/wifi.nix
@@ -26,6 +26,7 @@ in
 
     ../../../programs/fonts.nix
     ../../../programs/gamemode.nix
+    ../../../programs/gamescope.nix
     ../../../programs/steam.nix
     ../../../programs/general.nix
   ];
