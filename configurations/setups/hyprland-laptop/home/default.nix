@@ -1,8 +1,5 @@
-{ pkgs, config, ... }:
+{ pkgs, config, user, ... }:
 
-let
-      user = "nixie";
-in
 {
   imports = [
       ../../../users/${user}/home-manager

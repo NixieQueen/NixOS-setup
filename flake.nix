@@ -13,6 +13,7 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    swww.url = "github:LGFae/swww";
   };
 
   outputs = { self, nixpkgs, hyprland, home-manager, nixpkgs-f2k, ... } @ inputs:
@@ -59,7 +60,7 @@
          };
 
           hyprNixieLaptop = lib.nixosSystem {
-            specialArgs = { inherit inputs; };
+            specialArgs = { inherit inputs; inherit user; };
             inherit system;
             modules = [
 
@@ -73,7 +74,7 @@
               ./configurations/setups/hyprland-laptop/base
 
               home-manager.nixosModules.home-manager {
-                home-manager.extraSpecialArgs = { inherit inputs; };
+                home-manager.extraSpecialArgs = { inherit inputs; inherit user; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";
                 home-manager.useUserPackages = true;

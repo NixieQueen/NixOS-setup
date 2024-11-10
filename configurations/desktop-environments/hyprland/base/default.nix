@@ -8,7 +8,7 @@
   };
 
   services.displayManager = {
-    defaultSession = "none+hyprland";
+    defaultSession = "hyprland";
   };
 
   programs.hyprland = {
@@ -18,4 +18,10 @@
     # make sure to also set the portal package, so that they are in sync
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+
+  # Plugins and addons
+  environment.systemPackages = with pkgs; [
+    hyprshot # screenshotting tool
+    inputs.swww.packages.${pkgs.system}.swww # background tool
+  ];
 }

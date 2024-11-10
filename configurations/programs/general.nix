@@ -2,7 +2,6 @@
 
 {
     environment.systemPackages = with pkgs; [
-        openconnect
         luaPackages.luarocks
         lua-pam
         zip
@@ -18,8 +17,6 @@
         polkit_gnome
         polkit
         playerctl
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-hyprland
         appimage-run
         python3
     ];

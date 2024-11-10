@@ -1,4 +1,4 @@
-{ inputs, config, lib, pkgs, ... }:
+{ inputs, pkgs, user, ... }:
 
 # This has to be ran through the home manager
 {
@@ -13,6 +13,7 @@
       "$hyprpath" = "~/.config/hypr/hyprland";
       source = [
         "$hyprpath/environment-variables.conf"
+        "$hyprpath/startup-apps.conf"
         "$hyprpath/inputs.conf"
         "$hyprpath/dwindle.conf"
         "$hyprpath/keys.conf"
@@ -24,6 +25,32 @@
         "$hyprpath/xwayland.conf"
         "$hyprpath/themes/nixie.conf"
       ];
+    };
+  };
+
+  systemd.user = {
+    services.wallpaperTimer = {
+      Install = {WantedBy = ["graphical-session.target"];};
+
+      Unit = {
+        Description = "Set wallpaper based on time of day using swww";
+        After = ["graphical-session-pre.target"];
+        PartOf = ["graphical-session.target"];
+      };
+
+      Service = {
+        Type = "oneshot";
+        ExecStart = "/home/${user}/.config/swww/BackgroundManager";
+        IOSchedulingClass = "idle";
+      };
+    };
+
+    timers.wallpaperTimer = {
+      Unit = {Description = "Set wallpaper based on time of day using swww";};
+
+      Timer = {OnUnitActiveSec = "1h";};
+
+      Install = {WantedBy = ["timers.target"];};
     };
   };
 }
