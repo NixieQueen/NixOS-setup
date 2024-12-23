@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
+  #xdg.userDirs = {
+  #  enable = true;
+  #  createDirectories = true;
+  #};
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nixie = {
     isNormalUser = true;

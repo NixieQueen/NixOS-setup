@@ -28,6 +28,7 @@ in
     ../../../programs/gamemode.nix
     ../../../programs/gamescope.nix
     ../../../programs/steam.nix
+    ../../../programs/fwupd.nix
     ../../../programs/general.nix
   ];
 }

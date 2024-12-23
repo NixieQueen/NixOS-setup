@@ -35,6 +35,7 @@
       config.common.default = "*";
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
+        #xdg-desktop-portal-hyprland
       ];
     };
   };
@@ -92,7 +93,7 @@
     tumbler.enable = true;
     gvfs.enable = true;
     redshift = {
-      enable = true;
+      enable = false;
       executable = "/bin/redshift-gtk";
       brightness = {
         day = "1";

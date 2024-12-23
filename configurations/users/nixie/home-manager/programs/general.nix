@@ -1,14 +1,20 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
     home.packages = with pkgs; [
         discord
         btop
-        picom-ft-labs
+        #picom-ft-labs
         thunderbird-bin
         krita
         teams-for-linux
         libreoffice-fresh
+
+        clipse
+
+        blender
+
+        inputs.ignis.packages.${system}.ignis
 
         hunspell
         hunspellDicts.uk_UA
@@ -27,6 +33,5 @@
         winetricks
         wineWowPackages.stable
 
-        #hyprpaper
     ];
 }

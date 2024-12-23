@@ -19,5 +19,7 @@
         playerctl
         appimage-run
         python3
+        imagemagickBig
+        ffmpeg
     ];
 }

@@ -9,7 +9,8 @@
         syntaxHighlighting.enable = true;
 
         shellAliases = {
-            update = "cd ~/nixosConfig && sudo nixos-rebuild switch --flake .# && doom upgrade";
+            update = "cd ~/nixosConfig && sudo nix flake update && sudo nixos-rebuild switch --flake .# && doom upgrade";
+            rebuild = "cd ~/nixosConfig && sudo nixos-rebuild switch --flake .#";
             fetch = "clear && neofetch";
             emacs = "doom run";
         };
