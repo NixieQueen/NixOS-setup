@@ -1,0 +1,16 @@
+# You can split this configuration into multiple files
+# Create your files separately and then link them to this file like this:
+# source = ~/.config/hypr/myColors.conf
+$hyprpath = ~/.config/hypr/hyprland
+
+source = $hyprpath/environment-variables.conf
+source = $hyprpath/inputs.conf
+source = $hyprpath/dwindle.conf
+source = $hyprpath/keys.conf
+source = $hyprpath/monitors.conf
+source = $hyprpath/window-rules.conf
+source = $hyprpath/animations.conf
+source = $hyprpath/misc.conf
+source = $hyprpath/performance.conf
+source = $hyprpath/xwayland.conf
+source = $hyprpath/themes/nixie.conf

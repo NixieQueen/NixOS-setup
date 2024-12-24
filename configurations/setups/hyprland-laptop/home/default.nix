@@ -13,5 +13,6 @@
       ../../../users/${user}/home-manager/programs/gtk.nix
       ../../../users/${user}/home-manager/programs/librewolf.nix
       ../../../users/${user}/home-manager/programs/zsh.nix
+      ../../../users/${user}/home-manager/programs/spotify.nix
   ];
 }

@@ -6,5 +6,7 @@
         python39
         ripgrep
         dex
+        usbutils
+        socat
     ];
 }

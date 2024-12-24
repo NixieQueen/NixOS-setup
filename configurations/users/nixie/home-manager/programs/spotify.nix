@@ -1,6 +1,7 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
+  imports = [ inputs.spicetify-nix.homeManagerModules.default ];
   programs.spicetify =
     let
       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -16,10 +17,6 @@
         enabledCustomApps = with spicePkgs.apps; [
           newReleases
           ncsVisualizer
-        ];
-        enabledSnippets = with spicePkgs.snippets; [
-          rotating-coverart
-          pointer
         ];
 
         theme = spicePkgs.themes.catppuccin;

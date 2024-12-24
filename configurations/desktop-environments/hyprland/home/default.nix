@@ -55,6 +55,23 @@
 
       Install = {WantedBy = ["timers.target"];};
     };
+
+    services.hyprwindowhandle = {
+      Install = {WantedBy = ["graphical-session.target"];};
+
+      Unit = {
+        Description = "Handle hyprland window attaching and deattaching events";
+        After = ["graphical-session-pre.target"];
+        PartOf = ["graphical-session.target"];
+      };
+
+      Service = {
+        Type = "oneshot";
+        ExecStart = "/home/${user}/.config/hypr/HyprWindowHandle";
+        IOSchedulingClass = "idle";
+      };
+    };
+
   };
 
   # Hypridle setup
