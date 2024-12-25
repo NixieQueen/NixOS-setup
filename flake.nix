@@ -18,9 +18,11 @@
     };
     swww.url = "github:LGFae/swww";
     ignis.url = "github:somokill/ignis-nix";
+    nixpkgs.follows = "nixos-cosmic/nixpkgs";
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, ... } @ inputs:
     let
         hostname = "nixieFramework";
         laptopConfig = "laptop";
@@ -93,6 +95,37 @@
             ];
          };
 
+          cosmicNixieLaptop = lib.nixosSystem {
+            specialArgs = { inherit inputs; inherit user; };
+            inherit system;
+            modules = [
+
+              ./configurations/setups/overlays.nix
+              {
+                nix.settings = {
+                  substituters = [ "https://cosmic.cachix.org/" ];
+                  trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+                };
+              }
+              {
+                networking.hostName = "cosmicNixieLaptop";
+              }
+              nixos-cosmic.nixosModules.default
+              ./configurations/setups/cosmic-laptop/base
+
+              home-manager.nixosModules.home-manager {
+                home-manager.extraSpecialArgs = { inherit inputs; inherit user; };
+                home-manager.useGlobalPkgs = true;
+                home-manager.backupFileExtension = "backup";
+                home-manager.useUserPackages = true;
+                home-manager.users.${user} = {
+                  imports = [
+                    ./configurations/setups/cosmic-laptop/home
+                  ];
+                };
+              }
+            ];
+         };
 
        };
     };

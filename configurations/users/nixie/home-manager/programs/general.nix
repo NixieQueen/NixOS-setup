@@ -14,6 +14,15 @@
 
         blender
 
+        # OBS
+        (pkgs.wrapOBS {
+          plugins = with pkgs.obs-studio-plugins; [
+            wlrobs
+            obs-backgroundremoval
+            obs-pipewire-audio-capture
+          ];
+        })
+
         inputs.ignis.packages.${system}.ignis
 
         hunspell

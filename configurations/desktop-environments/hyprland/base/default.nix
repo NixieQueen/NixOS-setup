@@ -23,5 +23,6 @@
   environment.systemPackages = with pkgs; [
     hyprshot # screenshotting tool
     inputs.swww.packages.${pkgs.system}.swww # background tool
+    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
   ];
 }

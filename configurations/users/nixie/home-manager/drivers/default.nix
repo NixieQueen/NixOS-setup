@@ -8,5 +8,6 @@
         dex
         usbutils
         socat
+        pyright
     ];
 }
