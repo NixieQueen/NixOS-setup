@@ -17,7 +17,7 @@
       inputs.hyprland.follows = "hyprland";
     };
     swww.url = "github:LGFae/swww";
-    ignis.url = "github:somokill/ignis-nix";
+    ignis.url = "github:linkfrg/ignis";
     nixpkgs.follows = "nixos-cosmic/nixpkgs";
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };

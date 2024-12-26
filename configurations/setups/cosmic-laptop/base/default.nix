@@ -20,15 +20,15 @@ in
 
     ../../../services/audio.nix
     ../../../services/wifi.nix
-    ../../../services/tlp-laptop.nix
+    #../../../services/tlp-laptop.nix
     ../../../services/thermald.nix
     ../../../services/upower.nix
 
     ../../../programs/fonts.nix
-    ../../../programs/gamemode.nix
-    ../../../programs/gamescope.nix
+    #../../../programs/gamemode.nix
+    #../../../programs/gamescope.nix
     ../../../programs/steam.nix
-    ../../../programs/fwupd.nix
+    #../../../programs/fwupd.nix
     ../../../programs/general.nix
   ];
 }
