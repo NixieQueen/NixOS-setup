@@ -12,7 +12,6 @@
         emacs
         firefox
         wget
-        neofetch
         kitty
         polkit_gnome
         polkit

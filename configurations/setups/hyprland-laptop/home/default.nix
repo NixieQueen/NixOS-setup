@@ -14,6 +14,6 @@
       ../../../users/${user}/home-manager/programs/librewolf.nix
       ../../../users/${user}/home-manager/programs/zsh.nix
       ../../../users/${user}/home-manager/programs/spotify.nix
-      ../../../users/${user}/home-manager/programs/wlsunset.nix
+      ../../../users/${user}/home-manager/programs/gammastep.nix
   ];
 }

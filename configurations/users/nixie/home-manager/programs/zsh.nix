@@ -11,7 +11,10 @@
         shellAliases = {
             update = "cd ~/nixosConfig && sudo nix flake update && sudo nixos-rebuild switch --flake .# && doom upgrade";
             rebuild = "cd ~/nixosConfig && sudo nixos-rebuild switch --flake .#";
-            fetch = "clear && neofetch";
+            change = "cd ~/nixosConfig && sudo nixos-rebuild switch --flake";
+            good-girl = "echo 'Yay thanks~ :3c'";
+            fetch = "clear && hyfetch";
+            neofetch = "hyfetch";
             emacs = "doom run";
         };
         history.size = 10000;

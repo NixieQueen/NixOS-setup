@@ -3,6 +3,8 @@
 {
     home.packages = with pkgs; [
         discord
+        neofetch
+        hyfetch
         btop
         #picom-ft-labs
         thunderbird-bin
