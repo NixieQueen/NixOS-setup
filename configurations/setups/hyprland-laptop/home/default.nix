@@ -15,5 +15,6 @@
       ../../../users/${user}/home-manager/programs/zsh.nix
       ../../../users/${user}/home-manager/programs/spotify.nix
       ../../../users/${user}/home-manager/programs/gammastep.nix
+      ../../../users/${user}/home-manager/programs/minecraft.nix
   ];
 }

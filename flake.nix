@@ -22,6 +22,15 @@
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };
 
+  nixConfig = {
+    extra-substituters = [
+      "https://cosmic.cachix.org/"
+    ];
+    extra-trusted-public-keys = [
+      "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+    ];
+  };
+
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, ... } @ inputs:
     let
         hostname = "nixieFramework";
