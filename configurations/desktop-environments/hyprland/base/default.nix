@@ -7,12 +7,8 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-  environment.systemPackages = with pkgs; [
-    xdg-desktop-portal-hyprland
-  ];
-
   xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-hyprland
+    #xdg-desktop-portal-hyprland
   ];
 
   services.displayManager = {
@@ -29,6 +25,7 @@
 
   # Plugins and addons
   environment.systemPackages = with pkgs; [
+    xdg-desktop-portal-hyprland
     hyprshot # screenshotting tool
     inputs.swww.packages.${pkgs.system}.swww # background tool
     inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
