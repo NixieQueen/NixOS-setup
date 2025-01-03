@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    xdg-desktop-portal-hyprland
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   xdg-desktop-portal-hyprland
+  # ];
 
   environment.sessionVariables = {
     #XDG_CURRENT_DESKTOP = "Hyprland";

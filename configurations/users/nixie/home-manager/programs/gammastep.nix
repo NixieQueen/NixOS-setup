@@ -9,8 +9,8 @@
     tray = true;
     settings = {
       general = {
-        temp-day = 6500;
-        temp-night = 1300;
+        temp-day = lib.mkForce 6500;
+        temp-night = lib.mkForce 1300;
         fade = 1;
       };
     };

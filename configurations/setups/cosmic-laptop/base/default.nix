@@ -23,6 +23,8 @@ in
     #../../../services/tlp-laptop.nix
     ../../../services/thermald.nix
     ../../../services/upower.nix
+    # ../../../services/samba.nix
+    # ../../../services/printing.nix
 
     ../../../programs/fonts.nix
     #../../../programs/gamemode.nix

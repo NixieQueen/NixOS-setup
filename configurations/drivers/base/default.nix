@@ -33,10 +33,6 @@
       enable = true;
       xdgOpenUsePortal = false;
       config.common.default = "*";
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        #xdg-desktop-portal-hyprland
-      ];
     };
   };
 
@@ -65,45 +61,8 @@
   };
 
   services = {
-    printing = {
-      enable = true;
-      drivers = [ pkgs.cnijfilter2 pkgs.gutenprint pkgs.hplipWithPlugin ];
-    };
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-      publish = {
-        enable = true;
-        addresses = true;
-        userServices = true;
-      };
-    };
-
-    samba = {
-      enable = true;
-      settings = {
-        global = {
-          security = "user";
-          workgroup = "CBH";
-        };
-      };
-      openFirewall = true;
-    };
     tumbler.enable = true;
     gvfs.enable = true;
-    redshift = {
-      enable = false;
-      executable = "/bin/redshift-gtk";
-      brightness = {
-        day = "1";
-        night = "1";
-      };
-      temperature = {
-        day = 5700;
-        night = 1600;
-      };
-    };
   };
 
 }

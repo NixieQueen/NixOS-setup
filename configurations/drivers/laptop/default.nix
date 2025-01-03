@@ -2,7 +2,7 @@
 
 {
   # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput = {
+  services.libinput = {  # X11 based
     touchpad = {
       tapping = true;
       naturalScrolling = false;

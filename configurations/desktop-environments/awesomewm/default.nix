@@ -5,6 +5,14 @@
     defaultSession = "none+awesome";
   };
 
+  environment.systemPackages = with pkgs; [
+    xdg-desktop-portal-gtk
+  ];
+
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+  ];
+
   services.xserver = {
     windowManager = {
       awesome = {
