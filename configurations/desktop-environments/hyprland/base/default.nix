@@ -25,7 +25,7 @@
 
   # Plugins and addons
   environment.systemPackages = with pkgs; [
-    xdg-desktop-portal-hyprland
+    #xdg-desktop-portal-hyprland
     hyprshot # screenshotting tool
     inputs.swww.packages.${pkgs.system}.swww # background tool
     inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland

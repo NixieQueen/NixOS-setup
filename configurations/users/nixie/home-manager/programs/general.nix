@@ -12,6 +12,9 @@
         teams-for-linux
         libreoffice-fresh
 
+        #pymol
+        #qchem.gromacs
+
         clipse
 
         blender

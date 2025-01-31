@@ -20,6 +20,10 @@
     ignis.url = "github:linkfrg/ignis";
     nixpkgs.follows = "nixos-cosmic/nixpkgs";
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    qchem = {
+      url = "github:Nix-QChem/NixOS-QChem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -31,7 +35,7 @@
     ];
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, qchem, ... } @ inputs:
     let
         hostname = "nixieFramework";
         laptopConfig = "laptop";
@@ -83,7 +87,11 @@
 
               ./configurations/setups/overlays.nix
               {
-                #nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];
+                nixpkgs.overlays = [ qchem.overlays.qchem ];
+                nix.settings = {
+                  substituters = [ "https://nix-qchem.cachix.org" ];
+                  trusted-public-keys = [ "nix-qchem.cachix.org-1:ZjRh1PosWRj7qf3eukj4IxjhyXx6ZwJbXvvFk3o3Eos=" ];
+                };
               }
               {
                 networking.hostName = "hyprNixieLaptop";
