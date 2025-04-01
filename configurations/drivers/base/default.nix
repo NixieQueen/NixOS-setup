@@ -36,6 +36,11 @@
     };
   };
 
+  hardware = {
+    # Xone controller support
+    xone.enable = true;
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput = {
     enable = true;

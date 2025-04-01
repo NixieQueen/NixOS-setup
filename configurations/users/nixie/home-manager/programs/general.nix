@@ -15,7 +15,7 @@
         #pymol
         #qchem.gromacs
 
-        clipse
+        #clipse
 
         blender
 
