@@ -1,0 +1,8 @@
+{ computerType, ... }:
+
+{
+  imports = [
+    ./base
+    ./${computerType}
+  ];
+}

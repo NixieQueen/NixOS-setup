@@ -1,0 +1,59 @@
+{ config, inputs, pkgs, ... }:
+
+{
+  imports = [
+    ./general.nix
+    ./3dmodel.nix
+    ./git.nix
+    ./gtk.nix
+    ./librewolf.nix
+    ./minecraft.nix
+    ./spotify.nix
+    ./zsh.nix
+  ];
+  
+  home.packages = with pkgs; [
+    discord
+    neofetch
+    hyfetch
+    btop
+    thunderbird-bin
+    krita
+    teams-for-linux
+    libreoffice-fresh
+
+    #pymol
+    #qchem.gromacs
+
+    #clipse
+
+    blender
+
+    # OBS
+    (pkgs.wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+      ];
+    })
+
+    hunspell
+    hunspellDicts.uk_UA
+    hunspellDicts.nl_nl
+
+    # Setup lutris and its dependancies
+    (lutris.override {
+      extraLibraries = pkgs: [
+        # List lutris dependancies here
+      ];
+      extraPkgs = pkgs: [
+        # Extra lutris pkgs
+      ];
+    })
+    lutris
+    winetricks
+    wineWowPackages.stable
+
+  ];
+}

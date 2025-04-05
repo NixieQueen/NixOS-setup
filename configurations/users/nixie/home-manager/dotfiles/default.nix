@@ -1,14 +1,34 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.file.".config" = {
-    recursive = true;
-    source = ./dot-config;
+  home.file.".config/autostart/discord.desktop" = {
+    source = ./dot-config/autostart/discord.desktop;
   };
+  home.file.".config/autostart/polkit.desktop" = {
+    source = ./dot-config/autostart/polkit.desktop;
+  };
+
+  home.file.".config/btop" = {
+    recursive = true;
+    source = ./dot-config/btop;
+  };
+  home.file.".config/doom" = {
+    recursive = true;
+    source = ./dot-config/doom;
+  };
+  home.file.".config/kitty" = {
+    recursive = true;
+    source = ./dot-config/kitty;
+  };
+  home.file.".config/Thunar" = {
+    recursive = true;
+    source = ./dot-config/Thunar;
+  };
+
   home.file.".p10k.zsh" = {
-    recursive = true;
-    source = ./home-folder/.p10k.zsh;
+    source = ./dot-config/.p10k.zsh;
   };
+
   home.file.".Xresources" = {
     text = ''
       Xft.dpi: 96

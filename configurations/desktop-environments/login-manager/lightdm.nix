@@ -5,8 +5,9 @@
     displayManager = {
       gdm.enable = false;
       #defaultSession = "none+awesome";
-      defaultSession = "none+hyprland";
+      defaultSession = "hyprland";
       lightdm = {
+        background = "/home/nixie/.config/awesome/themes/nixie-theme/backgrounds/MountainDragon.png";
         enable = true;
         greeters.slick = {
           enable = true;

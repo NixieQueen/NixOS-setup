@@ -6,7 +6,6 @@
         neofetch
         hyfetch
         btop
-        #picom-ft-labs
         thunderbird-bin
         krita
         teams-for-linux
@@ -27,8 +26,6 @@
             obs-pipewire-audio-capture
           ];
         })
-
-        inputs.ignis.packages.${system}.ignis
 
         hunspell
         hunspellDicts.uk_UA

@@ -37,11 +37,7 @@
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, qchem, ... } @ inputs:
     let
-        hostname = "nixieFramework";
-        laptopConfig = "laptop";
-        desktopConfig = "desktop";
-        user = "nixie";
-        homeDirectory = "/home/nixie";
+        computerType = "laptop";  # Can be laptop or desktop
         system = "x86_64-linux";
         pkgs = import nixpkgs {
              inherit system;
@@ -50,97 +46,79 @@
         lib = nixpkgs.lib;
     in {
        nixosConfigurations = {
-         awesomeNixieLaptop = lib.nixosSystem {
-            specialArgs = { inherit inputs; inherit user; };
+         NixieOSAwesome = lib.nixosSystem {
+            specialArgs = { inherit inputs; inherit computerType; userDE = "awesomewm"; };
             inherit system;
             modules = [
 
-              ./configurations/setups/overlays.nix
               {
-                nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];
+                networking.hostName = "NixieOSAwesome";
               }
-              {
-                networking.hostName = "awesomeNixieLaptop";
-              }
-              #./configurations/setups/awesomewm/base
-              ./configurations/setups/awesomewm-laptop/base
+
+              ./configurations/desktop-environments/awesomewm
+              ./configurations/overlays
+              ./configurations/system
+              ./configurations/users/users.nix
 
               home-manager.nixosModules.home-manager {
-                home-manager.extraSpecialArgs = { inherit inputs; inherit user; };
+                home-manager.extraSpecialArgs = { inherit inputs; userDE = "awesomewm"; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";
                 home-manager.useUserPackages = true;
-                home-manager.users.${user} = {
-                  imports = [
-                    #./configurations/setups/awesomewm/home
-                    ./configurations/setups/awesomewm-laptop/home
-                  ];
-                };
               }
+
+              ./configurations/users
             ];
          };
 
-          hyprNixieLaptop = lib.nixosSystem {
-            specialArgs = { inherit inputs; inherit user; };
+          NixieOSHyprland = lib.nixosSystem {
+            specialArgs = { inherit inputs; inherit computerType; userDE = "hyprland"; };
             inherit system;
             modules = [
 
-              ./configurations/setups/overlays.nix
               {
-                nixpkgs.overlays = [ qchem.overlays.qchem ];
-                nix.settings = {
-                  substituters = [ "https://nix-qchem.cachix.org" ];
-                  trusted-public-keys = [ "nix-qchem.cachix.org-1:ZjRh1PosWRj7qf3eukj4IxjhyXx6ZwJbXvvFk3o3Eos=" ];
-                };
+                networking.hostName = "NixieOSHyprland";
               }
-              {
-                networking.hostName = "hyprNixieLaptop";
-              }
-              ./configurations/setups/hyprland-laptop/base
+
+              ./configurations/desktop-environments/hyprland
+              ./configurations/overlays
+              ./configurations/system
+              ./configurations/users/users.nix
 
               home-manager.nixosModules.home-manager {
-                home-manager.extraSpecialArgs = { inherit inputs; inherit user; };
+                home-manager.extraSpecialArgs = { inherit inputs; userDE = "hyprland"; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";
                 home-manager.useUserPackages = true;
-                home-manager.users.${user} = {
-                  imports = [
-                    ./configurations/setups/hyprland-laptop/home
-                  ];
-                };
               }
+
+              ./configurations/users
             ];
          };
 
-          cosmicNixieLaptop = lib.nixosSystem {
-            specialArgs = { inherit inputs; inherit user; };
+          NixieOSCosmic = lib.nixosSystem {
+            specialArgs = { inherit inputs; inherit computerType; userDE = "cosmic"; };
             inherit system;
             modules = [
 
-              ./configurations/setups/overlays.nix
               {
-                nix.settings = {
-                  substituters = [ "https://cosmic.cachix.org/" ];
-                  trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-                };
+                networking.hostName = "NixieOSCosmic";
               }
-              {
-                networking.hostName = "cosmicNixieLaptop";
-              }
+
+              ./configurations/desktop-environments/cosmic
+              ./configurations/overlays
               nixos-cosmic.nixosModules.default
-              ./configurations/setups/cosmic-laptop/base
+              ./configurations/system
+              ./configurations/users/users.nix
 
               home-manager.nixosModules.home-manager {
-                home-manager.extraSpecialArgs = { inherit inputs; inherit user; };
+                home-manager.extraSpecialArgs = { inherit inputs; userDE = "cosmic"; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";
                 home-manager.useUserPackages = true;
-                home-manager.users.${user} = {
-                  imports = [
-                    ./configurations/setups/cosmic-laptop/home
-                  ];
-                };
               }
+
+              ./configurations/users
             ];
          };
 
