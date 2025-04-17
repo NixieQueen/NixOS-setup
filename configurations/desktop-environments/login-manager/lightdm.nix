@@ -5,32 +5,17 @@
     displayManager = {
       gdm.enable = false;
       #defaultSession = "none+awesome";
-      defaultSession = "hyprland";
+      #defaultSession = "hyprland";
       lightdm = {
-        background = "/home/nixie/.config/awesome/themes/nixie-theme/backgrounds/MountainDragon.png";
+        background = "${
+        (pkgs.fetchFromGitHub {
+          owner = "NixieQueen";
+          repo = "awesomeWM-setup";
+          rev = "177425c9904f5cf7b714a8eb8d03f8b943d44ada";
+          sha256 = "8U3J9N/fYviIdZYKmoNsHppo3blc7eEBtZFJ3zRZxWM=";
+        })}/themes/nixie-theme/backgrounds/MountainDragon.png";
         enable = true;
-        greeters.slick = {
-          enable = true;
-          draw-user-backgrounds = true;
-          extraConfig = "background=/home/nixie/.config/awesome/themes/nixie-theme/backgrounds/MountainDragon.png";
-          iconTheme = {
-            name = "Papirus-Dark";
-            package = pkgs.papirus-icon-theme;
-          };
-          theme = {
-            package = pkgs.gnome-themes-extra;
-            name = "Adwaita";
-            #name = "palenight";
-            #package = pkgs.palenight-theme;
-          };
-          cursorTheme = {
-            name = "Numix-Cursor";
-            package = pkgs.numix-cursor-theme;
-          };
-          font = {
-            package = pkgs.fira-code;
-          };
-        };
+        #greeter.package = pkgs.lightdm-webkit2;
       };
     };
   };
