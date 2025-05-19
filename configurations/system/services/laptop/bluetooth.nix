@@ -3,7 +3,7 @@
 {
   # Enable bluetooth
   hardware.bluetooth = {
-    enable = true;
+    enable = false;
     hsphfpd.enable = false;
     settings = {
       General = {

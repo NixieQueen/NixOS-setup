@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./audio.nix ./printing.nix ./samba.nix ];
+  imports = [ ./audio.nix ./openconnect.nix ./printing.nix ./samba.nix ];
 }

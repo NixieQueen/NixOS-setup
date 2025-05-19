@@ -10,6 +10,13 @@
       };
     };
     openFirewall = true;
+    nsswins = false;
+  };
+
+  services.samba-wsdd = {
+    enable = false;
+    discovery = false;
+    openFirewall = true;
   };
 
   services.gvfs.enable = true;

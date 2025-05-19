@@ -4,15 +4,15 @@
   networking.networkmanager = {
     enable = true;  # Easiest to use and most distros use this by default.
     #wifi.backend = "iwd";
-    wifi.powersave = false;
-    #dhcp = "dhcpcd";
+    wifi.powersave = true;
+    dhcp = "dhcpcd";
   };
 
-  #networking.dhcpcd = {
-  #  enable = true;
-  #};
+  networking.dhcpcd = {
+    enable = true;
+  };
 
-  #networking.useDHCP = true;
+  networking.useDHCP = false;
   #networking.wireless = {
   #  iwd = {
   #    enable = true;

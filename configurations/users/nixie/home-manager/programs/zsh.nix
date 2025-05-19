@@ -33,7 +33,7 @@
         }
         ];
 
-        initExtra = ''
+        initContent = ''
         export PATH=$PATH:/$HOME/.config/emacs/bin/
 
         bindkey "^[[1;5C" forward-word

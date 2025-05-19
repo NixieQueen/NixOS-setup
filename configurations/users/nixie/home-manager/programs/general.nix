@@ -43,6 +43,8 @@
         lutris
         winetricks
         wineWowPackages.stable
+        #wineWowPackages.waylandFull
+        #wineWowPackages.staging
 
     ];
 }

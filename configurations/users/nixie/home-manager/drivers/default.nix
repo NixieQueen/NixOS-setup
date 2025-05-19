@@ -3,7 +3,7 @@
 {
     home.packages = with pkgs; [
         dconf
-        python39
+        python314
         ripgrep
         dex
         usbutils

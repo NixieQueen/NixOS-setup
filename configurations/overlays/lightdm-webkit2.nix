@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   nixpkgs.overlays = [
@@ -33,32 +33,60 @@
     # })
 
     (final: prev: {
-      lightdm-webkit2 = (pkgs.lightdm-mini-greeter.override{}).overrideAttrs (oldAttrs: {
-        nativeBuildInputs = with pkgs; [ gtk3 webkit2-sharp lightdm dbus-glib ninja ];
+      lightdm-webkit2 = pkgs.python3Packages.buildPythonApplication {
+          name = "lightdm-webkit2";
 
-        src = buildins.fetchGit {
-          url = "https://github.com/MerkeX/Lightdm-webkit2-greeter";
-          rev = "4549fd31e540a0fe7d4f21d8e18e6ef3f15875d6";
-        };
+          nativeBuildInputs = with pkgs; [
+            rsync
+            gnumake
+            typescript
+            sudo
+            pkg-config
+          ];
+          dontWrapQtApps = true;
+          
+          buildInputs = with pkgs; [
+            lightdm
+            python312Packages.pygobject3
+            python312Packages.pyqt5
+            python312Packages.pyqtwebengine
+            python312Packages.ruamel-yaml
+            python312Packages.inotify
+            #python312Packages.pyqt5
+            libsForQt5.qt5.qtwebengine
+            gobject-introspection
+            xorg.libxcb
+            xorg.libX11
+          ];
 
-        buildPhase = ''
-git clone https://github.com/MerkeX/lightdm-webkit2-greeter.git /tmp/greeter
-cd /tmp/greeter/build
-#git checkout ${LATEST_RELEASE_TAG} # eg. git checkout 2.2
-git checkout stable
-meson --prefix=/usr --libdir=lib ..
-ninja
-        '';
+          # unpackPhase
+          # patchPhase
+          # configurePhase
+          # buildPhase
+          # checkPhase
+          # installPhase
+          # fixupPhase
+          # installCheckPhase
+          # distPhase
+   
+          src = builtins.fetchGit {
+              url = "https://github.com/JezerM/web-greeter.git";
+              rev = "0bfa7f0036b2336c4d9aa9ad35e0777ab0b41857";
+          };
 
-        installPhase = ''
-sudo ninja install
-        '';
+          buildPhase = ''
+            
+          '';
 
-        meta = with lib; {
-          description = "webkit2 greeter for lightdm";
-          homepage = "https://github.com/MerkeX/Lightdm-webkit2-greeter";
-        };
-      });
+          installPhase = ''
+            sudo make install
+          '';
+
+          meta = with lib; {
+              description = "webkit2 greeter for lightdm";
+              homepage = "https://github.com/JezerM/web-greeter";
+          };
+      };
     })
   ];
 }
