@@ -54,6 +54,7 @@
     lutris
     winetricks
     wineWowPackages.stable
+    #wine-wayland
 
   ];
 }

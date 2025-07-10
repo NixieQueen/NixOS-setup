@@ -3,22 +3,23 @@
 
   inputs = {
     #picom.url = "github:yshui/picom";
-    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k"; ## Awesomewm
+    #nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     home-manager = {
-        url = github:nix-community/home-manager;
+        url = "github:nix-community/home-manager/release-25.05";
         inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    swww.url = "github:LGFae/swww";
+    #hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland-plugins = {
+    #  url = "github:hyprwm/hyprland-plugins";
+    #  inputs.hyprland.follows = "hyprland";
+    #};
+    #swww.url = "github:LGFae/swww";
     ignis.url = "github:linkfrg/ignis";
-    nixpkgs.follows = "nixos-cosmic/nixpkgs";
+    #nixpkgs.follows = "nixos-cosmic/nixpkgs";
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     qchem = {
       url = "github:Nix-QChem/NixOS-QChem";

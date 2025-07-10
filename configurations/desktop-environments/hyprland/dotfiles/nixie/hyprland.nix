@@ -3,12 +3,12 @@
 # This has to be ran through the home manager
 {
   wayland.windowManager.hyprland = {
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     enable = true;
     xwayland.enable = true;
     plugins = [
       #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      #inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
     settings = {
       "$hyprpath" = "~/.config/hypr/hyprland";
@@ -25,6 +25,7 @@
         "$hyprpath/misc.conf"
         "$hyprpath/performance.conf"
         "$hyprpath/xwayland.conf"
+        "$hyprpath/workspaces.conf"
         "$hyprpath/themes/nixie.conf"
         "$pluginpath/hyprbars.conf"
       ];

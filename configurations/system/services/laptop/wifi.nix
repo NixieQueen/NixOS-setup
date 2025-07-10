@@ -1,18 +1,34 @@
 { config, pkgs, ... }:
 
 {
+  services.resolved = {
+    enable = false;
+    dnssec = "true";
+    domains = [ "~." ];
+    dnsovertls = "true";
+  };
+
   networking.networkmanager = {
     enable = true;  # Easiest to use and most distros use this by default.
     #wifi.backend = "iwd";
     wifi.powersave = true;
-    dhcp = "dhcpcd";
+    #dhcp = "dhcpcd";
+    #dns = "systemd-resolved";
   };
 
-  networking.dhcpcd = {
-    enable = true;
+  networking.wireless.iwd = {
+    enable = false;
+    settings = {
+      IPv6.Enabled = true;
+      Settings.AutoConnect = true;
+    };
   };
 
-  networking.useDHCP = false;
+  #networking.dhcpcd = {
+  #  enable = true;
+  #};
+
+  #networking.useDHCP = true;
   #networking.wireless = {
   #  iwd = {
   #    enable = true;

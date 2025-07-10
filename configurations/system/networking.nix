@@ -15,4 +15,12 @@
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
+
+  # Fucking chemdraw
+  networking.firewall.allowedTCPPorts = [
+
+  ];
+  networking.firewall.allowedUDPPorts = [
+
+  ];
 }

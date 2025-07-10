@@ -3,7 +3,7 @@
 {
   services.xserver = {
     displayManager = {
-      gdm.enable = false;
+      #gdm.enable = false;
       #defaultSession = "none+awesome";
       #defaultSession = "hyprland";
       lightdm = {
