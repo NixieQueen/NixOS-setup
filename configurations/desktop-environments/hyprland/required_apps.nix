@@ -1,5 +1,5 @@
 { inputs, pkgs, ... }:
 
 {
-  imports = [ ../login-manager/gdm.nix ../Wayland.nix ];
+  imports = [ ../login-manager/sddm.nix ../Wayland.nix ];
 }
