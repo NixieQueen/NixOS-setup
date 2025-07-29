@@ -18,7 +18,9 @@
     #  inputs.hyprland.follows = "hyprland";
     #};
     #swww.url = "github:LGFae/swww";
-    ignis.url = "github:linkfrg/ignis";
+    ignis = {
+      url = "github:ignis-sh/ignis";
+      inputs.nixpkgs.follows = "nixpkgs";
     #nixpkgs.follows = "nixos-cosmic/nixpkgs";
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     qchem = {

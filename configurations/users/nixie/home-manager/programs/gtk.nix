@@ -39,4 +39,5 @@
     };
   };
   home.sessionVariables.GTK_THEME = "palenight";
+  home.sessionVariables.GTK_ICON_THEME = "Papirus-Dark";
 }

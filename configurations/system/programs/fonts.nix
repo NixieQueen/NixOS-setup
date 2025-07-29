@@ -10,5 +10,6 @@
     fira-code
     fira-code-symbols
     fira-sans
+    kode-mono
   ];
 }
