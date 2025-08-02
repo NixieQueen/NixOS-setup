@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ../login-manager/lightdm.nix ../X11.nix ];
+  imports = [ ../login-manager/sddm.nix ../X11.nix ];
 }

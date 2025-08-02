@@ -38,7 +38,7 @@
 
   hardware = {
     # Xone controller support
-    xone.enable = true;
+    #xone.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).

@@ -43,7 +43,7 @@
       };
 
       Service = {
-        Type = "oneshot";
+        Type = "simple";
         ExecStart = "/home/nixie/.config/swww/BackgroundManager";
         IOSchedulingClass = "idle";
       };
@@ -67,7 +67,7 @@
       };
 
       Service = {
-        Type = "oneshot";
+        Type = "simple";
         ExecStart = "/home/nixie/.config/hypr/HyprWindowHandle";
         IOSchedulingClass = "idle";
       };

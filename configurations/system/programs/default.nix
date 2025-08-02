@@ -7,5 +7,6 @@
     ./general.nix
     ./steam.nix
     ./thunar.nix
+    ./gpu-screen-recorder.nix
   ];
 }
