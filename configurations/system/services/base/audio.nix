@@ -4,6 +4,8 @@
   # Pulseaudio needs to be disabled
   services.pulseaudio.enable = false;
 
+  environment.systemPackages = with pkgs; [ qjackctl ];
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;

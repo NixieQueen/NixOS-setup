@@ -39,6 +39,10 @@
   hardware = {
     # Xone controller support
     #xone.enable = true;
+    sane = {
+      enable = true;
+      extraBackends = [ pkgs.hplipWithPlugin ];
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).

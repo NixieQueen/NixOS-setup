@@ -24,6 +24,10 @@
     recursive = true;
     source = ./dot-config/Thunar;
   };
+  home.file.".config/patchbay" = {
+    recursive = true;
+    source = ./dot-config/patchbay;
+  };
 
   home.file.".p10k.zsh" = {
     source = ./dot-config/.p10k.zsh;

@@ -28,6 +28,10 @@
       url = "github:Nix-QChem/NixOS-QChem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=latest";
+      #inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -39,7 +43,7 @@
     ];
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, qchem, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, qchem, nix-flatpak, ... } @ inputs:
     let
         computerType = "laptop";  # Can be laptop or desktop
         system = "x86_64-linux";
@@ -83,6 +87,8 @@
               {
                 networking.hostName = "NixieOSHyprland";
               }
+
+              nix-flatpak.nixosModules.nix-flatpak
 
               ./configurations/desktop-environments/hyprland
               ./configurations/overlays

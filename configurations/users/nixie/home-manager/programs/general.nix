@@ -10,6 +10,7 @@
         krita
         teams-for-linux
         libreoffice-fresh
+        vlc
 
         #pymol
         #qchem.gromacs
