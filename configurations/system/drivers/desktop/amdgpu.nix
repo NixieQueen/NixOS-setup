@@ -9,9 +9,6 @@
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 
-  # Get blender to use the HIP package
-  imports = [ ../../../overlays/blender-hip.nix ];
-
   # Get OpenCL support
   hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr.icd

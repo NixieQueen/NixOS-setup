@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./blender-hip.nix
     ./substituters.nix
     ./picom-ft-labs.nix
     ./lua-pam.nix

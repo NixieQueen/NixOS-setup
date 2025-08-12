@@ -10,6 +10,7 @@
     ./minecraft.nix
     ./spotify.nix
     ./zsh.nix
+    ./blender.nix
   ];
   
   home.packages = with pkgs; [
