@@ -69,7 +69,7 @@
               ./configurations/users/users.nix
 
               home-manager.nixosModules.home-manager {
-                home-manager.extraSpecialArgs = { inherit inputs; userDE = "awesomewm"; };
+                home-manager.extraSpecialArgs = { inherit inputs; inherit computerType; userDE = "awesomewm"; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";
                 home-manager.useUserPackages = true;
@@ -96,7 +96,7 @@
               ./configurations/users/users.nix
 
               home-manager.nixosModules.home-manager {
-                home-manager.extraSpecialArgs = { inherit inputs; userDE = "hyprland"; };
+                home-manager.extraSpecialArgs = { inherit inputs; inherit computerType; userDE = "hyprland"; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";
                 home-manager.useUserPackages = true;
@@ -122,7 +122,7 @@
               ./configurations/users/users.nix
 
               home-manager.nixosModules.home-manager {
-                home-manager.extraSpecialArgs = { inherit inputs; userDE = "cosmic"; };
+                home-manager.extraSpecialArgs = { inherit inputs; inherit computerType; userDE = "cosmic"; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.backupFileExtension = "backup";
                 home-manager.useUserPackages = true;
