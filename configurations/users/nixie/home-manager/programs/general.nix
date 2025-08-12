@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     discord
-    neofetch
+    #neofetch
     hyfetch
     btop
     thunderbird-bin
@@ -17,13 +17,13 @@
     #clipse
 
     # OBS
-    (pkgs.wrapOBS {
-      plugins = with pkgs.obs-studio-plugins; [
-        wlrobs
-        obs-backgroundremoval
-        obs-pipewire-audio-capture
-      ];
-    })
+    # (pkgs.wrapOBS {
+    #   plugins = with pkgs.obs-studio-plugins; [
+    #     wlrobs
+    #     obs-backgroundremoval
+    #     obs-pipewire-audio-capture
+    #   ];
+    # })
 
     hunspell
     hunspellDicts.uk_UA

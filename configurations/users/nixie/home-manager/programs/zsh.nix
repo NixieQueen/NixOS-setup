@@ -43,6 +43,7 @@
         bindkey  "^[[3~"  delete-char
 
         [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+        hyfetch
         '';
      };
   };

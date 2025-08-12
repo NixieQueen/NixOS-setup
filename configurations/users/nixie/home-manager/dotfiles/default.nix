@@ -28,6 +28,10 @@
     recursive = true;
     source = ./dot-config/patchbay;
   };
+  home.file.".config/ckb-next" = {
+    recursive = true;
+    source = ./dot-config/ckb-next;
+  };
 
   home.file.".p10k.zsh" = {
     source = ./dot-config/.p10k.zsh;

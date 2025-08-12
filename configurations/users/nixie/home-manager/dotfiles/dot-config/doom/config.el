@@ -85,13 +85,15 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(defun qleguennec/set-frame-transparency (&optional frame)
-  (interactive)
-  (let ((frame (or frame (selected-frame))))
-    (set-frame-parameter frame 'alpha-background 80)))
+                                        ;(defun qleguennec/set-frame-transparency (&optional frame)
+                                        ;  (interactive)
+                                        ;  (let ((frame (or frame (selected-frame))))
+                                        ;    (set-frame-parameter frame 'alpha-background 80)))
 
-(dolist (frame (visible-frame-list))
-  (qleguennec/set-frame-transparency frame))
+                                        ;(dolist (frame (visible-frame-list))
+                                        ;  (qleguennec/set-frame-transparency frame))
 
-(add-to-list 'after-make-frame-functions
-             #'qleguennec/set-frame-transparency)
+                                        ;(add-to-list 'after-make-frame-functions
+                                        ;             #'qleguennec/set-frame-transparency)
+
+(set-frame-parameter (selected-frame) 'alpha '(90 . 90)) (add-to-list 'default-frame-alist '(alpha . (90 . 90)))
