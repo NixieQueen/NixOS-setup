@@ -10,4 +10,10 @@
     };
 
     services.tumbler.enable = true;
+    services.gvfs.enable = true;
+
+    # Enable archiving service
+    programs.file-roller = {
+        enable = true;
+    };
 }

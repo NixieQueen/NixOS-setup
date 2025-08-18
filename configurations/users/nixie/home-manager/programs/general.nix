@@ -11,6 +11,8 @@
     teams-for-linux
     libreoffice-fresh
 
+    vlc
+
     #pymol
     #qchem.gromacs
 
@@ -40,6 +42,7 @@
     })
     lutris
     winetricks
+    (wineWowPackages.stable.override { waylandSupport = true; })
     wineWowPackages.stable
     #wine-wayland
 
