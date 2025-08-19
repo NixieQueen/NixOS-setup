@@ -3,8 +3,8 @@
 {
   home.pointerCursor = {
     gtk.enable = true;
-    name = "Numix-Cursor";
-    package = pkgs.numix-cursor-theme;
+    name = "skyrim";
+    package = pkgs.skyrim-cursor-theme;
     size = 24;
   };
 
@@ -22,8 +22,8 @@
     };
 
     cursorTheme = {
-      name = "Numix-Cursor";
-      package = pkgs.numix-cursor-theme;
+      name = "skyrim";
+      package = pkgs.skyrim-cursor-theme;
     };
 
     gtk3.extraConfig = {
