@@ -5,7 +5,7 @@
     gtk.enable = true;
     name = "skyrim";
     package = pkgs.skyrim-cursor-theme;
-    size = 24;
+    size = 48;
   };
 
   gtk = {
@@ -24,6 +24,7 @@
     cursorTheme = {
       name = "skyrim";
       package = pkgs.skyrim-cursor-theme;
+      size = 48;
     };
 
     gtk3.extraConfig = {

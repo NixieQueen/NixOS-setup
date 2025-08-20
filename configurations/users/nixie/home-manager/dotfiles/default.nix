@@ -40,8 +40,8 @@
   home.file.".Xresources" = {
     text = ''
       Xft.dpi: 96
-      Xcursor.theme: Numix-cursors
-      Xcursor.size: 24
+      Xcursor.theme: skyrim
+      Xcursor.size: 48
     '';
   };
 

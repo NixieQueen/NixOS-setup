@@ -22,7 +22,7 @@
 
         installPhase = ''
           mkdir -p ./tmp
-          cd ./Small/Linux
+          cd ./Large/Linux
           for f in *.in; do
             xcursorgen ./"$f" ../../tmp/"$(echo $f | sed 's/.in//g')"
           done
