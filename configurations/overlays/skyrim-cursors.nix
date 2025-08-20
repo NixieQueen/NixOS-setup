@@ -17,17 +17,19 @@
           repo = "SkyrimCursor";
           rev = "${version}";
           #sha256 = "sha256-";
-          sha256 = "";
+          sha256 = "sha256-fSPla7k+kbbdZUzj0QheNF9kFKzr8gv7aTbIjh8J+mY=";
         };
 
-        buildPhase = ''
-          cd $startdir/Small/Linux
+        installPhase = ''
+          mkdir -p ./tmp
+          cd ./Small/Linux
           for f in *.in; do
-            xcursorgen $startdir/Small/Linux/"$f" $srcdir/"${f%.in}"
+            xcursorgen ./"$f" ../../tmp/"$(echo $f | sed 's/.in//g')"
           done
-          cd $srcdir
+          cd ../../tmp
 
-            ln -sf move all-scroll
+  ln -sf move all-scroll
+  ln -sf pencil link
   ln -sf crosshair bottom-tee
   ln -sf crosshair cell
   ln -sf right_ptr center_ptr
@@ -190,11 +192,10 @@
   ln -sf wait watch
   ln -sf wait clock
   ln -sf wait 0426c94ea35c87780ff01dc239897213
-        '';
 
-        installPhase = ''
           mkdir -p $out/usr/share/icons/skyrim/cursors
           install -dm 755 $out/share/icons/skyrim/cursors
+          cp -dr --no-preserve='ownership' * "$out/share/icons/skyrim/cursors"
         '';
       };
     })

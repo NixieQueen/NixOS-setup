@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=gnome-polkit
+GenericName=polkit
+Comment=Runs the polkit daemon for auth
+Exec=polkit-agent-helper-1
+Icon=polkit
+Terminal=false
+Type=Application
+Hidden=false
+StartupNotify=true
