@@ -11,5 +11,6 @@
     ./spotify.nix
     ./zsh.nix
     ./blender.nix
+    ./ssh.nix
   ];
 }
