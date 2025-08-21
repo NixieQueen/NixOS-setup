@@ -6,11 +6,10 @@
       enable = true;
       userName = "NixieQueen";
       userEmail = "thestampyliker@gmail.com";
+      package = pkgs.git.override { withLibsecret = true; };
       extraConfig = {
-        credential = {
-          helper = "libsecret";
-          credentialStore = "cache";
-        };
+        gpg.format = "ssh";
+        credential.helper = "libsecret";
       };
     };
   };

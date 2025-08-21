@@ -43,7 +43,7 @@
     lutris
     winetricks
     (wineWowPackages.stable.override { waylandSupport = true; })
-    wineWowPackages.stable
+    #wineWowPackages.stable
     #wine-wayland
 
   ];
