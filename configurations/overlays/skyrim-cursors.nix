@@ -21,12 +21,19 @@
         };
 
         installPhase = ''
-          mkdir -p ./tmp
+          mkdir -p ./tmp/cursors
           cd ./Large/Linux
           for f in *.in; do
-            xcursorgen ./"$f" ../../tmp/"$(echo $f | sed 's/.in//g')"
+            xcursorgen ./"$f" ../../tmp/cursors/"$(echo $f | sed 's/.in//g')"
           done
-          cd ../../tmp
+
+          cp ${pkgs.writeText "../../tmp/index.theme" ''
+            [Icon Theme]
+            Name=skyrim
+            Comment=Skyrim cursors
+          ''} ../../tmp/index.theme
+
+          cd ../../tmp/cursors
 
   ln -sf move all-scroll
   ln -sf pencil link
@@ -193,23 +200,13 @@
   ln -sf wait clock
   ln -sf wait 0426c94ea35c87780ff01dc239897213
 
+          cd ..
+
           mkdir -p $out/usr/share/icons/skyrim/cursors
-          install -dm 755 $out/share/icons/skyrim/cursors
-          cp -dr --no-preserve='ownership' * "$out/share/icons/skyrim/cursors"
+          install -dm 755 $out/share/icons/skyrim/
+          cp -dr --no-preserve='ownership' * "$out/share/icons/skyrim/"
         '';
       };
     })
   ];
 }
-
-#cp ${pkgs.writeText "$out/share/sddm/themes/sugar-candy/theme.conf" ''
-#[General]
-#
-#Background="${
-#        (pkgs.fetchFromGitHub {
-#          owner = "NixieQueen";
-#          repo = "awesomeWM-setup";
-#          rev = "177425c9904f5cf7b714a8eb8d03f8b943d44ada";
-#          sha256 = "8U3J9N/fYviIdZYKmoNsHppo3blc7eEBtZFJ3zRZxWM=";
-#        })}/themes/nixie-theme/backgrounds/MountainDragon.png"
-#          ''} $out/share/sddm/themes/sugar-candy/theme.conf

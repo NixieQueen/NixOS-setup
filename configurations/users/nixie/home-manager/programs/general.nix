@@ -12,6 +12,7 @@
     libreoffice-fresh
 
     vlc
+    evince  # Pdf reader
 
     #pymol
     #qchem.gromacs
@@ -42,8 +43,8 @@
     })
     lutris
     winetricks
-    (wineWowPackages.stable.override { waylandSupport = true; })
-    #wineWowPackages.stable
+    #(wineWowPackages.stable.override { waylandSupport = true; })
+    wineWowPackages.stable
     #wine-wayland
 
   ];

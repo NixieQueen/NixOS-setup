@@ -6,9 +6,9 @@
     #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     enable = true;
     xwayland.enable = true;
-    plugins = [
+    plugins = with pkgs.hyprlandPlugins; [
       #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper
-      #inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      hyprbars
     ];
     settings = {
       "$hyprpath" = "~/.config/hypr/hyprland";
@@ -56,23 +56,6 @@
 
       Install = {WantedBy = ["timers.target"];};
     };
-
-    services.hyprwindowhandle = {
-      Install = {WantedBy = ["graphical-session.target"];};
-
-      Unit = {
-        Description = "Handle hyprland window attaching and deattaching events";
-        After = ["graphical-session-pre.target"];
-        PartOf = ["graphical-session.target"];
-      };
-
-      Service = {
-        Type = "simple";
-        ExecStart = "/home/nixie/.config/hypr/HyprWindowHandle";
-        IOSchedulingClass = "idle";
-      };
-    };
-
   };
 
   # Hypridle setup

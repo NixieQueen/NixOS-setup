@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./tlp-desktop.nix ];
+  imports = [ ./tlp-desktop.nix ./hd-idle.nix ];
 }
