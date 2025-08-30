@@ -5,6 +5,7 @@
     discord
     #neofetch
     hyfetch
+    osu-lazer-bin
     btop
     thunderbird-bin
     krita
