@@ -8,7 +8,7 @@
     btop
     thunderbird-bin
     krita
-    teams-for-linux
+    #teams-for-linux  # This is calling in an electron package that is built *manually*, avoid at all costs
     libreoffice-fresh
 
     vlc
