@@ -17,10 +17,10 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   # Fucking chemdraw
-  networking.firewall.allowedTCPPorts = [
+  #networking.firewall.allowedTCPPorts = [
 
-  ];
-  networking.firewall.allowedUDPPorts = [
+  #];
+  #networking.firewall.allowedUDPPorts = [
 
-  ];
+  #];
 }

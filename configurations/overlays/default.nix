@@ -8,6 +8,8 @@
     #./lightdm-webkit2.nix
     ./sddm-sugar-theme.nix
     ./skyrim-cursors.nix
+    ./lammps.nix
+    ./iqmol.nix
   ];
   
   nixpkgs.overlays = [

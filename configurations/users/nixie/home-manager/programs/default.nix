@@ -12,5 +12,6 @@
     ./zsh.nix
     ./blender.nix
     ./ssh.nix
+    ./chemistry.nix
   ];
 }

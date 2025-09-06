@@ -4,8 +4,8 @@
   services = {
     printing = {
       enable = true;
-      #drivers = [ pkgs.cnijfilter2 pkgs.gutenprint pkgs.hplipWithPlugin ];
-      drivers = [ pkgs.gutenprint pkgs.hplipWithPlugin ];
+      drivers = [ pkgs.cnijfilter2 pkgs.gutenprint pkgs.hplipWithPlugin ];
+      #drivers = [ pkgs.gutenprint pkgs.hplipWithPlugin ];
     };
     avahi = {
       enable = true;

@@ -6,6 +6,8 @@
     config.allowUnfree = true;
   };
 
+  programs.nix-ld.enable = false;  # Enable different filesystem exes
+
   nix = {
     settings.auto-optimise-store = true;
     gc = {
