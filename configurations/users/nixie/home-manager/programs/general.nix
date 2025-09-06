@@ -11,6 +11,8 @@
     #teams-for-linux  # This is calling in an electron package that is built *manually*, avoid at all costs
     libreoffice-fresh
 
+    osu-lazer-bin
+
     vlc
     evince  # Pdf reader
 
