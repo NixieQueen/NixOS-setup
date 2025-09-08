@@ -12,7 +12,7 @@
     settings.auto-optimise-store = true;
     gc = {
        automatic = true;
-       dates = "weekly";
+       dates = "daily";
        options = "--delete-older-than 7d";
     };
     package = pkgs.nixVersions.latest;

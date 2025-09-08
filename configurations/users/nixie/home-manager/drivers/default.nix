@@ -10,4 +10,13 @@
         socat
         pyright
     ];
+
+    xdg.systemDirs.data = [
+        "$HOME/.local/share"
+    ];
+
+    xdg.userDirs = {
+        enable = true;
+        createDirectories = true;
+    };
 }

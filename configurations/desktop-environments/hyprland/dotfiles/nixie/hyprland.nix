@@ -32,32 +32,6 @@
     };
   };
 
-  systemd.user = {
-    services.wallpaperTimer = {
-      Install = {WantedBy = ["graphical-session.target"];};
-
-      Unit = {
-        Description = "Set wallpaper based on time of day using swww";
-        After = ["graphical-session-pre.target"];
-        PartOf = ["graphical-session.target"];
-      };
-
-      Service = {
-        Type = "simple";
-        ExecStart = "/home/nixie/.config/swww/BackgroundManager";
-        IOSchedulingClass = "idle";
-      };
-    };
-
-    timers.wallpaperTimer = {
-      Unit = {Description = "Set wallpaper based on time of day using swww";};
-
-      Timer = {OnUnitActiveSec = "1h";};
-
-      Install = {WantedBy = ["timers.target"];};
-    };
-  };
-
   # Hypridle setup
   services.hypridle = {
     enable = true;
