@@ -10,6 +10,7 @@
       #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper
       hyprbars
     ];
+    systemd.variables = ["--all"];
     settings = {
       "$hyprpath" = "~/.config/hypr/hyprland";
       "$pluginpath" = "$hyprpath/plugins";
