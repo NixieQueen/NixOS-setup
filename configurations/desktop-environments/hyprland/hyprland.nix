@@ -11,7 +11,7 @@
   #];
 
   services.displayManager = {
-    defaultSession = "hyprland";
+    defaultSession = "hyprland-uwsm";
   };
 
   programs.hyprland = {
