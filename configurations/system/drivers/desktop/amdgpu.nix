@@ -18,7 +18,9 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    clinfo
-  ];
+  # Set up LACT for overclock/powerdraw changes
+  environment.systemPackages = with pkgs; [ lact clinfo amdgpu_top ];
+  systemd.packages = with pkgs; [ lact ];
+  systemd.services.lactd.wantedBy = ["multi-user.target"];
+  #services.lact.enable = true;
 }
