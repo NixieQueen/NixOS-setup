@@ -5,6 +5,7 @@
     ./substituters.nix
     ./picom-ft-labs.nix
     ./lua-pam.nix
+    ./lammps.nix
     #./lightdm-webkit2.nix
     ./sddm-sugar-theme.nix
     ./skyrim-cursors.nix
