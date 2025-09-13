@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
+    inputs.zotero-nix.packages.${system}.default
     discord
     #neofetch
     hyfetch

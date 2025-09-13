@@ -16,6 +16,7 @@
             fetch = "clear && hyfetch";
             neofetch = "hyfetch";
             emacs = "doom run";
+            zotero = "zotero --display=:1";
         };
         history.size = 10000;
         #history.path = config.xdg.dataHome/zsh/history;

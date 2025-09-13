@@ -28,6 +28,7 @@
       url = "github:Nix-QChem/NixOS-QChem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zotero-nix.url = "github:camillemndn/zotero-nix";
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
       #inputs.nixpkgs.follows = "nixpkgs";
@@ -43,7 +44,7 @@
     ];
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, qchem, nix-flatpak, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, qchem, nix-flatpak, zotero-nix, ... } @ inputs:
     let
         system = "x86_64-linux";
         pkgs = import nixpkgs {
