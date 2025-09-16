@@ -13,6 +13,5 @@
     ./blender.nix
     ./ssh.nix
     ./chemistry.nix
-    ./virtualbox.nix
   ];
 }
