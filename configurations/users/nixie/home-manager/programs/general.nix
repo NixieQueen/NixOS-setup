@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     inputs.zotero-nix.packages.${system}.default
+    jre8
     discord
     #neofetch
     hyfetch

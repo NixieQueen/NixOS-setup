@@ -41,7 +41,7 @@
     #xone.enable = true;
     sane = {
       enable = true;
-      extraBackends = [ pkgs.hplipWithPlugin ];
+      extraBackends = [ pkgs.hplipWithPlugin pkgs.sane-airscan ];
     };
   };
 
