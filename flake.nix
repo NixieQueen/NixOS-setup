@@ -1,6 +1,20 @@
 {
   description = "nixie's first flake";
 
+  nixConfig = {
+    substituters = [
+      #"https://nix-qchem.cachix.org"
+      #"https://cosmic.cachix.org"
+      #"https://hyprland.cachix.org"
+    ];
+
+    trusted-public-keys = [
+      #"nix-qchem.cachix.org-1:ZjRh1PosWRj7qf3eukj4IxjhyXx6ZwJbXvvFk3o3Eos="
+      #"cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+      #"hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
+  };
+
   inputs = {
     #picom.url = "github:yshui/picom";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k"; ## Awesomewm
@@ -33,15 +47,6 @@
       url = "github:gmodena/nix-flatpak/?ref=latest";
       #inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-
-  nixConfig = {
-    extra-substituters = [
-      "https://cosmic.cachix.org/"
-    ];
-    extra-trusted-public-keys = [
-      "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
-    ];
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, qchem, nix-flatpak, zotero-nix, ... } @ inputs:
@@ -132,6 +137,34 @@
             ./configurations/users
           ];
         };
+
+        NixieOSDNiri = lib.nixosSystem {
+          specialArgs = { inherit inputs; computerType = "desktop"; userDE = "niri"; };
+          inherit system;
+          modules = [
+
+            {
+              networking.hostName = "NixieOSDNiri";
+            }
+
+            nix-flatpak.nixosModules.nix-flatpak
+
+            ./configurations/desktop-environments/niri
+            ./configurations/overlays
+            ./configurations/system
+            ./configurations/users/users.nix
+
+            home-manager.nixosModules.home-manager {
+              home-manager.extraSpecialArgs = { inherit inputs; computerType = "desktop"; userDE = "niri"; };
+              home-manager.useGlobalPkgs = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.useUserPackages = true;
+            }
+
+            ./configurations/users
+          ];
+        };
+
 
         NixieOSCosmic = lib.nixosSystem {
           specialArgs = { inherit inputs; computerType = "laptop"; userDE = "cosmic"; };

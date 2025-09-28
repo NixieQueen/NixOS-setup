@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./substituters.nix
+    #./substituters.nix
     ./picom-ft-labs.nix
     ./lua-pam.nix
     #./lightdm-webkit2.nix

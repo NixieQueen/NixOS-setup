@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, inputs, ... }:
+let
+  #pkgs-hyprland-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   # Make xserver use the correct driver
   services.xserver.videoDrivers = [ "amdgpu" ];
@@ -11,6 +13,8 @@
 
   # Get OpenCL&OpenGL support
   hardware.graphics = {
+    #package = pkgs-hyprland-unstable.mesa;
+    #package32 = pkgs-hyprland-unstable.pkgsi686Linux.mesa;
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
