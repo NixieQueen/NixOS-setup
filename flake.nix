@@ -6,12 +6,16 @@
       #"https://nix-qchem.cachix.org"
       #"https://cosmic.cachix.org"
       #"https://hyprland.cachix.org"
+      "https://nix-community.cachix.org"
+      "https://cache.nixos.org/"
     ];
 
     trusted-public-keys = [
       #"nix-qchem.cachix.org-1:ZjRh1PosWRj7qf3eukj4IxjhyXx6ZwJbXvvFk3o3Eos="
       #"cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
       #"hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     ];
   };
 
@@ -37,11 +41,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #nixpkgs.follows = "nixos-cosmic/nixpkgs";
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-    qchem = {
-      url = "github:Nix-QChem/NixOS-QChem";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    #qchem = {
+    #  url = "github:Nix-QChem/NixOS-QChem";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     zotero-nix.url = "github:camillemndn/zotero-nix";
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
@@ -49,7 +53,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nixos-cosmic, qchem, nix-flatpak, zotero-nix, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, nix-flatpak, zotero-nix, ... } @ inputs:
     let
         system = "x86_64-linux";
         pkgs = import nixpkgs {
@@ -177,7 +181,7 @@
 
             ./configurations/desktop-environments/cosmic
             ./configurations/overlays
-            nixos-cosmic.nixosModules.default
+            inputs.nixos-cosmic.nixosModules.default
             ./configurations/system
             ./configurations/users/users.nix
 

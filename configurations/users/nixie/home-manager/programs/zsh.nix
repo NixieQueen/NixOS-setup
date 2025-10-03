@@ -9,7 +9,7 @@
         syntaxHighlighting.enable = true;
 
         shellAliases = {
-            update = "cd ~/nixosConfig && sudo nix flake update && sudo nixos-rebuild switch --flake .# && doom upgrade";
+            update = "cd ~/nixosConfig && cp -i flake.lock \"old locks/flake.lock of $(date '+%Y-%m-%d')\" && sudo nix flake update && sudo nixos-rebuild switch --flake .# && doom upgrade";
             rebuild = "cd ~/nixosConfig && sudo nixos-rebuild switch --flake .#";
             change = "cd ~/nixosConfig && sudo nixos-rebuild switch --flake";
             good-girl = "echo 'Yay thanks~ :3c'";

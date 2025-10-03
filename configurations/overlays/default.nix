@@ -14,6 +14,6 @@
   
   nixpkgs.overlays = [
     inputs.nixpkgs-f2k.overlays.window-managers
-    inputs.qchem.overlays.qchem
+    #inputs.qchem.overlays.qchem
   ];
 }

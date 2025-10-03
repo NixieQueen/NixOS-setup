@@ -21,5 +21,7 @@
   services.xserver = {
     enable = true;
     xkb.layout = "us";
+    xkb.variant = "altgr-intl";
+    xkb.options = "compose:l_alt";
   };
 }
