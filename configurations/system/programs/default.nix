@@ -8,6 +8,6 @@
     ./steam.nix
     ./thunar.nix
     ./gpu-screen-recorder.nix
-    ./virtualbox.nix
+    #./virtualbox.nix
   ];
 }
