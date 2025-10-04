@@ -9,5 +9,6 @@
     ./samba.nix
     ./drawingtablet.nix
     ./network.nix
+    ./upower.nix
   ];
 }
