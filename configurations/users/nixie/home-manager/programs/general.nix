@@ -4,7 +4,9 @@
   home.packages = with pkgs; [
     inputs.zotero-nix.packages.${system}.default
     jre8
-    discord
+    (discord.override {
+      withVencord = false;
+    })
     #neofetch
     hyfetch
     btop
@@ -12,6 +14,8 @@
     krita
     #teams-for-linux  # This is calling in an electron package that is built *manually*, avoid at all costs
     libreoffice-fresh
+
+    r2modman
 
     osu-lazer-bin
 

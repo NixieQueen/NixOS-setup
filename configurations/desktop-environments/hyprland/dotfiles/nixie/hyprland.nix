@@ -8,7 +8,7 @@
     xwayland.enable = true;
     plugins = with pkgs.hyprlandPlugins; [
       #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
-      hyprbars
+      #hyprbars
     ];
     systemd.variables = ["--all"];
     settings = {

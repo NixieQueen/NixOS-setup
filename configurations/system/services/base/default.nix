@@ -10,5 +10,6 @@
     ./drawingtablet.nix
     ./network.nix
     ./upower.nix
+    ./dnsmasq.nix
   ];
 }

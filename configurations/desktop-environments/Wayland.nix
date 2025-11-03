@@ -6,8 +6,8 @@
   # ];
 
   environment.sessionVariables = {
-    #XDG_CURRENT_DESKTOP = "Hyprland";
-    #XDG_SESSION_DESKTOP = "Hyprland";
+    #XDG_CURRENT_DESKTOP = "Niri";
+    #XDG_SESSION_DESKTOP = "Niri";
     #XDG_SESSION_TYPE = "wayland";
     #GDK_BACKEND = "wayland";
     #GTK_USE_PORTAL = "1";

@@ -40,6 +40,8 @@
       url = "github:ignis-sh/ignis";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hexecute.url = "github:ThatOtherAndrew/Hexecute";
     #nixpkgs.follows = "nixos-cosmic/nixpkgs";
     #nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     #qchem = {

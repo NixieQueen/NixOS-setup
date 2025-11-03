@@ -3,7 +3,7 @@
 {
     programs = {
         gamemode = {
-            enable = false;
+            enable = true;
         };
     };
 }

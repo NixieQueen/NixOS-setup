@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
     environment.systemPackages = with pkgs; [
-        luaPackages.luarocks
-        lua-pam
+        #luaPackages.luarocks
+        #lua-pam
         zip
         unzip
         alsa-utils
@@ -20,5 +20,6 @@
         python3
         imagemagickBig
         ffmpeg
+        inputs.hexecute.packages.${pkgs.system}.default
     ];
 }

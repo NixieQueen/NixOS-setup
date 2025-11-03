@@ -9,6 +9,8 @@
         usbutils
         socat
         pyright
+        ccls
+        gcc
     ];
 
     xdg.systemDirs.data = [
