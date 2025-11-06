@@ -16,6 +16,7 @@
     libreoffice-fresh
 
     r2modman
+    shijima
 
     osu-lazer-bin
 

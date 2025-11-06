@@ -10,6 +10,7 @@
     #./skyrim-cursors.nix
     #./lammps.nix
     #./iqmol.nix
+    ./shijime.nix
   ];
   
   nixpkgs.overlays = [
