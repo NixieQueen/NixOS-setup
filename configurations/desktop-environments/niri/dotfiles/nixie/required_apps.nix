@@ -1,5 +1,5 @@
 { inputs, pkgs, ... }:
 
 {
-  imports = [ ./gammastep.nix ./ignis.nix ];
+  imports = [ ./gammastep.nix ./swayidle.nix ./ignis.nix ];
 }
