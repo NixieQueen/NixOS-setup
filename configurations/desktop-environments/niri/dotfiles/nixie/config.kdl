@@ -114,6 +114,12 @@ input {
     // automatically.
     position x=1280 y=0
 }
+output "eDP-1" {
+    mode "2256x1504@59.999"
+    scale 1.1
+    transform "normal"
+}
+
 output "DP-3" {
     // Uncomment this line to disable this output.
     // off

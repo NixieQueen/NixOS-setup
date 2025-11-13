@@ -177,7 +177,7 @@
           modules = [
 
             {
-              networking.hostName = "NixieOSDNiri";
+              networking.hostName = "NixieOSLNiri";
             }
 
             nix-flatpak.nixosModules.nix-flatpak
