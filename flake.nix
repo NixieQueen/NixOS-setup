@@ -171,6 +171,33 @@
           ];
         };
 
+        NixieOSLNiri = lib.nixosSystem {
+          specialArgs = { inherit inputs; computerType = "laptop"; userDE = "niri"; };
+          inherit system;
+          modules = [
+
+            {
+              networking.hostName = "NixieOSDNiri";
+            }
+
+            nix-flatpak.nixosModules.nix-flatpak
+
+            ./configurations/desktop-environments/niri
+            ./configurations/overlays
+            ./configurations/system
+            ./configurations/users/users.nix
+
+            home-manager.nixosModules.home-manager {
+              home-manager.extraSpecialArgs = { inherit inputs; computerType = "laptop"; userDE = "niri"; };
+              home-manager.useGlobalPkgs = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.useUserPackages = true;
+            }
+
+            ./configurations/users
+          ];
+        };
+
 
         NixieOSCosmic = lib.nixosSystem {
           specialArgs = { inherit inputs; computerType = "laptop"; userDE = "cosmic"; };
