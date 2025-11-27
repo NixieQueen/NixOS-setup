@@ -15,6 +15,10 @@ cursor {
     hide-after-inactive-ms 1000
 }
 
+clipboard {
+    disable-primary
+}
+
 input {
     keyboard {
         xkb {

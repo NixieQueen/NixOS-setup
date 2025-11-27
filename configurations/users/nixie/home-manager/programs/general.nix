@@ -23,6 +23,10 @@
     vlc
     evince  # Pdf reader
 
+    wl-clipboard
+    libsecret
+    davinci-resolve
+
     #pymol
     #qchem.gromacs
 
