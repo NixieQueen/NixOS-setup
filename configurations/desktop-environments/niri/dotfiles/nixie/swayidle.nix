@@ -3,13 +3,17 @@
 {
   programs.swaylock = {
     enable = true;
+    package = pkgs.swaylock-plugin;
   };
   
   services.swayidle =
     let
       # Lock command
-      lock = "${pkgs.swaylock}/bin/swaylock --daemonize";
-      display = status: "swaymsg 'output * power ${status}'";
+      lock = "${pkgs.swaylock-plugin}/bin/swaylock-plugin --daemonize --grace 30sec";
+      displayoff = "${pkgs.systemd}/bin/systemctl suspend";
+      displaysleep = "${pkgs.systemd}/bin/systemctl sleep";
+      lightoff = "${pkgs.light}/bin/light -O; ${pkgs.light}/bin/light -S 0";
+      lighton = "${pkgs.light}/bin/light -I";
       # Hyprland
       # display = status: "hyprctl dispatch dpms ${status}";
       # Niri
@@ -19,40 +23,40 @@
         enable = true;
         timeouts = [
           {
-            timeout = 900; # in seconds
-            command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds' -t 5000";
+            timeout = 100; # in seconds
+            command = lightoff;
+            resumeCommand = lighton;
           }
           {
-            timeout = 1200;
+            timeout = 300;
             command = lock;
           }
           {
-            timeout = 1500;
-            command = display "off";
-            resumeCommand = display "on";
+            timeout = 400;
+            command = displayoff;
           }
           {
-            timeout = 1800;
-            command = "${pkgs.systemd}/bin/systemctl suspend";
+            timeout = 500;
+            command = displaysleep;
           }
         ];
         events = [
           {
             event = "before-sleep";
             # adding duplicated entries for the same event may not work
-            command = (display "off") + "; " + lock;
+            command = displayoff + "; " + lock;
           }
           {
             event = "after-resume";
-            command = display "on";
+            command = lighton;
           }
           {
             event = "lock";
-            command = (display "off") + "; " + lock;
+            command = displayoff + "; " + lock;
           }
           {
             event = "unlock";
-            command = display "on";
+            command = lighton;
           }
         ];
       };

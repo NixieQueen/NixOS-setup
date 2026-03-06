@@ -12,11 +12,12 @@
     btop
     thunderbird-bin
     krita
-    #teams-for-linux  # This is calling in an electron package that is built *manually*, avoid at all costs
+    teams-for-linux  # This is calling in an electron package that is built *manually*, avoid at all costs
     libreoffice-fresh
 
     r2modman
     #shijime
+    eduvpn-client
 
     osu-lazer-bin
 

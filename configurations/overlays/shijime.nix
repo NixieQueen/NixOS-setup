@@ -6,23 +6,42 @@
       shijime = pkgs.stdenv.mkDerivation rec {
         pname = "shijime";
         version = "v0.2.0-alpha1";
-        dontBuild = true;
+        dontBuild = false;
 
         buildInputs = with pkgs; [
           kdePackages.qtbase
         ];
+        strictDeps = true;
+        #dontUseCmakeConfigure = true;
         
         nativeBuildInputs = with pkgs; [
         #buildInputs = with pkgs; [
+          kdePackages.wrapQtAppsHook
+          autoPatchelfHook
           kdePackages.qtmultimedia
           pkg-config
-          libarchive
-          kdePackages.wrapQtAppsHook
-          dbus-cpp
-          kdePackages.kdbusaddons
-          #kdePackages.full
-        ];
 
+          zip
+          libarchive.lib
+          libgccjit
+          gcc
+
+          clang
+          cmake          
+
+          xorg.libX11
+          libgcc.lib
+          glibc
+          kdePackages.wayland
+
+          wayland
+          wayland-protocols
+          libxkbcommon
+          libGL
+          libGLU
+          mesa
+        ];
+ 
         src = pkgs.fetchFromGitHub {
           owner = "pixelomer";
           repo = "Shijima-Qt";
@@ -32,7 +51,7 @@
           sha256 = "sha256-PxrhVEAsQy+gGREa3t4zHUYpsmH0fwfr3+EJEDlqp8o=";
         };
 
-        configurePhase = ''
+        buildPhase = ''
           CONFIG=release make -j8
         '';
         

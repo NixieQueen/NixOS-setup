@@ -18,6 +18,10 @@
   #services.displayManager = {
   #  defaultSession = "niri";
   #};
+  
+  # Fix weird security problems with swaylock
+  security.pam.services.swaylock-plugin = {};
+  #
   environment.systemPackages = with pkgs; [
     #xdg-desktop-portal-hyprland
     #hyprshot # screenshotting tool
