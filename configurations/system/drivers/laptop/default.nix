@@ -10,13 +10,12 @@
     };
   };
 
-  programs = {
-    light.enable = true;
-  };
-
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
+  
   hardware.sane = {
     enable = true;
     extraBackends = [ pkgs.hplipWithPlugin ];
   };
-
 }

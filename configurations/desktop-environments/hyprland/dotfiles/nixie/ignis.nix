@@ -27,8 +27,9 @@
       useDartSass = true; # No idea what dart sass is
     };
 
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs.python313Packages; [
       # In case extra python or regular scripts are required!
+      numpy
     ];
   };
 }

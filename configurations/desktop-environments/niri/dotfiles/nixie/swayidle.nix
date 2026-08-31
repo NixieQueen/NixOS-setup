@@ -12,8 +12,8 @@
       lock = "${pkgs.swaylock-plugin}/bin/swaylock-plugin --daemonize --grace 30sec";
       displayoff = "${pkgs.systemd}/bin/systemctl suspend";
       displaysleep = "${pkgs.systemd}/bin/systemctl sleep";
-      lightoff = "${pkgs.light}/bin/light -O; ${pkgs.light}/bin/light -S 0";
-      lighton = "${pkgs.light}/bin/light -I";
+      lightoff = "${pkgs.brightnessctl}/bin/brightnessctl set 0%";
+      lighton = "${pkgs.brightnessctl}/bin/brightnessctl set 50%";
       # Hyprland
       # display = status: "hyprctl dispatch dpms ${status}";
       # Niri

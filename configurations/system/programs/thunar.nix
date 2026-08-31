@@ -13,7 +13,7 @@
     services.gvfs.enable = true;
 
     # Enable archiving service
-    programs.file-roller = {
-        enable = true;
-    };
+    environment.systemPackages = with pkgs; [
+      file-roller
+    ];
 }

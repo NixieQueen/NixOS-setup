@@ -6,11 +6,31 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1788064660,
-        "narHash": "sha256-BBONY2CDWe81hs7fcRg6mxO4D49/rGeUVpi2J+qoUPw=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1763716549,
+        "narHash": "sha256-nZe4Vl3NOJn6HnWM3LUnnUgWNZiI3CteYusb7WEZ/p0=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "d8c4d9394a300c80b1eb49dfc4cfe2c5a91b1170",
+        "rev": "17a8fe835d67419003e7592b14f2208ac018fc36",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1770484657,
+        "narHash": "sha256-Hcu8lNAGI5joa5VBfBJ7rQZGI7U1hFbg9VRgZe0T+Gw=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "a9e56e59aab55480b061e0867c680a124d866c0d",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
@@ -77,11 +97,31 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1782142426,
-        "narHash": "sha256-8003XFGgXUGE47ttuAVXT0MtIXrbggTppzTcnMHZDxA=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1762892536,
+        "narHash": "sha256-+P18RfBLIt7i6fx3on6z3uUOdxm5OKVAJre60MylUeg=",
         "owner": "ThatOtherAndrew",
         "repo": "Hexecute",
-        "rev": "80dbfa930a3fd0a3b08a6cad154b0173c94db64d",
+        "rev": "0f3701d2896e7492a34176f3816241461487641c",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1765826167,
+        "narHash": "sha256-iXQzLgZYzzD6b82Oa1nLvQKvUHrdOWgJi3awhW5YWrk=",
+        "owner": "ThatOtherAndrew",
+        "repo": "Hexecute",
+        "rev": "2105ee3f80a748bd4e270e8092fc12be4be927b6",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
@@ -97,16 +137,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1787377438,
-        "narHash": "sha256-Sxu1NLTD/Ern6hFGLlZmtKCSct3YQXZI/lls8RE1XeM=",
+        "lastModified": 1763992789,
+        "narHash": "sha256-WHkdBlw6oyxXIra/vQPYLtqY+3G8dUVZM8bEXk0t8x4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "65258d5c65a250189fde2e35f490d15e064c4c62",
+        "rev": "44831a7eaba4360fb81f2acc5ea6de5fde90aaa3",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-26.05",
+        "ref": "release-25.05",
         "repo": "home-manager",
         "type": "github"
       }
@@ -119,11 +159,31 @@
         ]
       },
       "locked": {
-        "lastModified": 1785596441,
-        "narHash": "sha256-ax/XBrQEOAJI0vHa5ywdcu846flL8f7kmsQ59HAau3w=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1762970543,
+        "narHash": "sha256-7ipFVC9pvI564c22b1dIEzSQ8dZXK3cxh/tF/4tX38c=",
         "owner": "ignis-sh",
         "repo": "ignis",
-        "rev": "97b7b5b17a16f574092b1584d7f5e24417455571",
+        "rev": "ba8b0e11c2462afc9fdc30ce6a72b4e94e8ee7c4",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1767456002,
+        "narHash": "sha256-q+ZYdTMLr0RCfN5qxOl56CbZBj702hYY2H5dOLynW+o=",
+        "owner": "ignis-sh",
+        "repo": "ignis",
+        "rev": "5fd140227c0f2d9d65a98d4af78b95b1558966da",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
@@ -156,11 +216,11 @@
     "infuse": {
       "flake": false,
       "locked": {
-        "lastModified": 1782538150,
-        "narHash": "sha256-PFRrjDC62Mk7cgyst4l/riW0C7o39srZt/+rYq9Iovs=",
+        "lastModified": 1768766368,
+        "narHash": "sha256-GW7S5dsFiQChSbGESrkFyNSzDLKGNH3H0EMeY+NLefY=",
         "ref": "refs/heads/trunk",
-        "rev": "364ea18b5611b5fd6a6acd7151411b430a70e194",
-        "revCount": 57,
+        "rev": "e837ece1b9de6ebcb7abd261f54a09bad3a2f820",
+        "revCount": 49,
         "type": "git",
         "url": "https://codeberg.org/amjoseph/infuse.nix.git"
       },
@@ -210,11 +270,31 @@
         "parts": "parts"
       },
       "locked": {
-        "lastModified": 1788077168,
-        "narHash": "sha256-0g2V3xdv7eyi/AnnBLpnJ93kruAp4kt7JDJ4svUdzRQ=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1763780890,
+        "narHash": "sha256-FKJ5sW15w4olF/XoQgJOs1b+Q7/fUFboOZyq57vzNZI=",
         "owner": "fortuneteller2k",
         "repo": "nixpkgs-f2k",
-        "rev": "fdc6693b44af091a97c1fb6f5aeb287ca0072d85",
+        "rev": "b01d3b41107b4a4ad725c01683b9672940f97e89",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1770525303,
+        "narHash": "sha256-l9ePIbePQBzq7husv1qqEVBlModJ0OfP48mO36Lol4A=",
+        "owner": "fortuneteller2k",
+        "repo": "nixpkgs-f2k",
+        "rev": "ecb53fc63091ae39cb67cd62d5a51226eb083408",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
@@ -248,11 +328,11 @@
     },
     "nixpkgs-lib": {
       "locked": {
-        "lastModified": 1785031560,
-        "narHash": "sha256-OmshNvn2vupOFpYinLUu+1Dnpu4n7Q5N3ggGVNHpkUI=",
+        "lastModified": 1769909678,
+        "narHash": "sha256-cBEymOf4/o3FD5AZnzC3J9hLbiZ+QDT/KDuyHXVJOpM=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "0e79af5e3d4dcfcd676ab5ba3f95d2e3352e078c",
+        "rev": "72716169fe93074c333e8d0173151350670b824c",
         "type": "github"
       },
       "original": {
@@ -263,43 +343,103 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1787848966,
-        "narHash": "sha256-7gDpu5hpq0rOYnYMcOWqSzquK4HA/xU8Xf3CjUBOOJA=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1763622513,
+        "narHash": "sha256-1jQnuyu82FpiSxowrF/iFK6Toh9BYprfDqfs4BB+19M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d57af924f160a5084293c71c2043f058bd1cdb60",
+        "rev": "c58bc7f5459328e4afac201c5c4feb7c818d604b",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1767313136,
+        "narHash": "sha256-16KkgfdYqjaeRGBaYsNrhPRRENs0qzkQVUooNHtoy2w=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ac62194c3917d5f474c1a844b6fd6da2db95077d",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-26.05",
+        "ref": "nixos-25.05",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1787962033,
-        "narHash": "sha256-u6z9VTZA4Kf3RkHQo9sQI7NI4Ei/uiU9vrMqOiwWP1Y=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1763622513,
+        "narHash": "sha256-1jQnuyu82FpiSxowrF/iFK6Toh9BYprfDqfs4BB+19M=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c5c4a43b0e8056328ec4529f735cabdb8f1942bb",
+        "rev": "c58bc7f5459328e4afac201c5c4feb7c818d604b",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1767313136,
+        "narHash": "sha256-16KkgfdYqjaeRGBaYsNrhPRRENs0qzkQVUooNHtoy2w=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ac62194c3917d5f474c1a844b6fd6da2db95077d",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-26.05",
+        "ref": "nixos-25.05",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1787900134,
-        "narHash": "sha256-VYXO0XZlgj06dxJZRhrD3WoSsvq/c7+/Akyoa22pefw=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1763421233,
+        "narHash": "sha256-Stk9ZYRkGrnnpyJ4eqt9eQtdFWRRIvMxpNRf4sIegnw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "83199d0d373dd3ac2b9a1996b1d0263f76ab7a4c",
+        "rev": "89c2b2330e733d6cdb5eae7b899326930c2c0648",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1770197578,
+        "narHash": "sha256-AYqlWrX09+HvGs8zM6ebZ1pwUqjkfpnv8mewYwAo+iM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
@@ -311,11 +451,31 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1788076316,
-        "narHash": "sha256-F/3VJrxOwNwIRgs5jW6o4riJojC0NfMC2nAyWWfu4jI=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1763779991,
+        "narHash": "sha256-oRqk632M13J7BRhCO9oMvFA7zjr6b4ZZLB5ubk0N/tk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d2e3fefc47ebb726c3bac247de26a973f2d5de77",
+        "rev": "8394480300f692f7cf2d57047fc69e1655896c0d",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1770524930,
+        "narHash": "sha256-seULla6GjEjY8v1t1tLC86xIRpt4H1TJCoDMYTGrTng=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ee870bf4c1a3a8cda4d9332f1643a7e4f144972f",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
@@ -345,11 +505,31 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1787559586,
-        "narHash": "sha256-onL0VLf9vPllmT0H/OlURIU5r5t5WIEl7t4tVNKT0Nw=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1763759067,
+        "narHash": "sha256-LlLt2Jo/gMNYAwOgdRQBrsRoOz7BPRkzvNaI/fzXi2Q=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "9d0d87172c374f89da73c1cfe6d81ae62feac1f1",
+        "rev": "2cccadc7357c0ba201788ae99c4dfa90728ef5e0",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1769996383,
+        "narHash": "sha256-AnYjnFWgS49RlqX7LrC4uA+sCCDBj0Ry/WOJ5XWAsa0=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "57928607ea566b5db3ad13af0e57e921e6b12381",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
@@ -395,11 +575,31 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1788083617,
-        "narHash": "sha256-aXMDRUxm/9se+vgKViKdDcClk1k3qA3sUwT0kAYo3Fg=",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
+        "lastModified": 1763831750,
+        "narHash": "sha256-84LFvgGQSJJ12FPNSiuHjlHSwcEp9enkGh5tGRtw9w8=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "bf4ed54253a61c8324a5b461638c42db77c0b980",
+        "rev": "ca2ce884882a9a96fa996823b99247a55efb9567",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "lastModified": 1770528352,
+        "narHash": "sha256-KO51BALxgLUlhg1CqQgA3Rj8vgAcDvoLxzNLTxD65cc=",
+        "owner": "Gerg-L",
+        "repo": "spicetify-nix",
+        "rev": "9f4ab243968118026f4ff82f7ce41d30319e2bf0",
+>>>>>>> 4d44a62 (Added: new fonts)
+=======
+>>>>>>> a708e21 (Last desktop push)
+=======
+>>>>>>> a708e21 (Last desktop push)
         "type": "github"
       },
       "original": {
@@ -462,11 +662,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1771326717,
-        "narHash": "sha256-pNGIsM7zgoceNGKzoqmksJ+g/nLUk/3YWSj3KObbHBQ=",
+        "lastModified": 1734615353,
+        "narHash": "sha256-uHAXT06/H5I+y5u9HYhjDOCXaV+4u7gE699L39IMasM=",
         "owner": "camillemndn",
         "repo": "zotero-nix",
-        "rev": "12a1afbc1767c46fca53504f7e1b50ed456ae207",
+        "rev": "11658a96d13ac42a438bd966bf5ae4e9310c688f",
         "type": "github"
       },
       "original": {

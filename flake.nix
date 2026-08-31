@@ -23,9 +23,9 @@
     #picom.url = "github:yshui/picom";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k"; ## Awesomewm
     #nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
     home-manager = {
-        url = "github:nix-community/home-manager/release-25.05";
+        url = "github:nix-community/home-manager/release-26.05";
         inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
